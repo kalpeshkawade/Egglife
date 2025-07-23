@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import ProductCarousel from "./product-carousel";
+import AnimatedProductDisplay from "./animated-product-display";
 
 export default function HeroSection() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -13,7 +13,7 @@ export default function HeroSection() {
     { text: "minding macros", color: "text-pink-500" }
   ];
 
-  // Rotate text randomly in sync with product carousel
+  // Rotate text randomly in sync with product display
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => {
@@ -23,7 +23,7 @@ export default function HeroSection() {
         } while (nextIndex === prevIndex && benefitTexts.length > 1);
         return nextIndex;
       });
-    }, 4000); // Match carousel timing
+    }, 4000); // Match product display timing
 
     return () => clearInterval(interval);
   }, [benefitTexts.length]);
@@ -49,13 +49,21 @@ export default function HeroSection() {
           <p className="text-lg text-gray-medium mb-8">Wraps made with egg whites, not flour.</p>
           <Link href="/where-to-buy">
             <button className="relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden group">
-              <span className="relative z-10">Find where to buy</span>
+              {/* Original text */}
+              <span className="relative z-10 block transition-all duration-300 group-hover:animate-slide-out-up">
+                Find where to buy
+              </span>
+              {/* Hover text that slides up */}
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 transform translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:animate-slide-up">
+                Find where to buy
+              </span>
+              {/* Background slide effect */}
               <div className="absolute inset-0 bg-orange-600 transform translate-x-full transition-transform duration-300 group-hover:translate-x-0"></div>
             </button>
           </Link>
         </div>
 
-        <ProductCarousel />
+        <AnimatedProductDisplay />
       </div>
       
       {/* Background decorative elements */}

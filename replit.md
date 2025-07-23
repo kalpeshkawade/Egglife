@@ -4,6 +4,14 @@
 
 This is a full-stack web application for EggLife, a brand that specializes in egg white wraps and related food products. The application features a product catalog, recipe hub, and informational pages about the brand. It's built with a modern React frontend and Express.js backend, using PostgreSQL for data storage.
 
+## Recent Changes (January 2025)
+
+- **Migration Completed**: Successfully migrated from Replit Agent to standard Replit environment
+- **Enhanced Product Display**: Implemented single product animation display showing one product at a time with random transitions (similar to reference website)
+- **Advanced Button Effects**: Added sophisticated hover effects to "Find where to buy" button with text sliding animations
+- **Custom Animations**: Created comprehensive CSS animation library including fade-in, product-reveal, shimmer, and slide effects
+- **Component Updates**: Replaced ProductCarousel with AnimatedProductDisplay for better visual impact
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
