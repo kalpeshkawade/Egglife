@@ -134,16 +134,9 @@ function ProductCard({ product }) {
         {/* Content */}
         <div className="p-6">
           {/* Product Name - Matching product color */}
-          <h3 className={`text-2xl font-bold mb-4 capitalize transition-colors duration-300 ${product.textColor}`}>
+          <h3 className={`text-2xl font-bold mb-6 capitalize transition-colors duration-300 ${product.textColor}`}>
             {product.name}
           </h3>
-          
-          {/* Product Name repeated 3 times as in reference */}
-          <div className={`text-sm font-medium mb-4 space-y-1 ${product.textColor} opacity-60`}>
-            <div>{product.name}</div>
-            <div>{product.name}</div>
-            <div>{product.name}</div>
-          </div>
 
           {/* Description */}
           <p className="text-gray-600 text-sm leading-relaxed">
