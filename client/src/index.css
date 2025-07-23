@@ -167,6 +167,25 @@
   }
 }
 
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(5px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-text-fade-in {
+  animation: text-fade-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
