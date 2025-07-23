@@ -317,6 +317,26 @@
   }
 }
 
+/* Wavy text animation for button hover */
+@keyframes wave-text {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(3px) rotate(-1deg);
+  }
+}
+
+.animate-wave-text {
+  animation: wave-text 0.8s ease-in-out;
+}
+
 /* Oval Egg Shape Hover Animation */
 @keyframes oval-expand {
   0% {

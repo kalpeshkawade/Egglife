@@ -4,6 +4,7 @@ import HeroSection from "@/components/hero-section";
 import NewsletterSignup from "@/components/newsletter-signup";
 import ProductShowcase from "@/components/product-showcase";
 import ScrollAnimatedSection from "@/components/scroll-animated-section";
+import PerfectProteinSection from "@/components/perfect-protein-section";
 import RecipeCarousel from "@/components/recipe-carousel";
 
 export default function Home() {
@@ -16,8 +17,9 @@ export default function Home() {
         <NewsletterSignup />
         <ProductShowcase />
         <ScrollAnimatedSection />
+        <PerfectProteinSection />
         
-        {/* Protein Benefits Section */}
+        {/* Protein Benefits Section - keeping for now but can be removed */}
         <section className="bg-gray-50 py-16">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
