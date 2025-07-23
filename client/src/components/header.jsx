@@ -11,14 +11,15 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
-          {/* Logo */}
+          {/* EggLife Brand Logo */}
           <div className="flex items-center">
-            <Link href="/">
-              <img 
-                src="https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&h=40" 
-                alt="EggLife Foods Logo" 
-                className="h-10"
-              />
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-orange-primary to-orange-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                <span className="text-white font-bold text-lg">E</span>
+              </div>
+              <span className="text-2xl font-bold text-gray-dark tracking-wide">
+                Egg<span className="text-orange-primary">Life</span>
+              </span>
             </Link>
           </div>
 

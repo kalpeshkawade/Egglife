@@ -6,23 +6,6 @@ export default function HeroSection() {
     <section className="bg-gradient-to-r from-orange-50 to-yellow-50 py-16 lg:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          {/* EggLife Brand Logo/Name */}
-          <div className="mb-8">
-            <div className="inline-flex items-center justify-center bg-white rounded-full px-8 py-4 shadow-lg mb-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-primary to-orange-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">E</span>
-                </div>
-                <span className="text-3xl font-bold text-gray-dark tracking-wide">
-                  Egg<span className="text-orange-primary">Life</span>
-                </span>
-              </div>
-            </div>
-            <div className="text-sm text-gray-medium font-medium tracking-widest uppercase">
-              Premium Egg White Wraps
-            </div>
-          </div>
-
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-dark mb-6">
             The Perfect Wrap<sup className="text-sm">®</sup>
           </h1>
