@@ -120,6 +120,14 @@
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
+
+  .animate-scroll-scale {
+    transition: transform 100ms ease-out;
+  }
+
+  .animate-parallax {
+    transition: transform 100ms ease-out;
+  }
 }
 
 /* Custom animations for EggLife product highlighting */
@@ -218,6 +226,15 @@
 }
 
 @keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer-bg {
   0% {
     background-position: -200px 0;
   }

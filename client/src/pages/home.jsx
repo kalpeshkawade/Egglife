@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import NewsletterSignup from "@/components/newsletter-signup";
 import ProductShowcase from "@/components/product-showcase";
-import NutritionGoals from "@/components/nutrition-goals";
+import ScrollAnimatedSection from "@/components/scroll-animated-section";
 import RecipeCarousel from "@/components/recipe-carousel";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
         <HeroSection />
         <NewsletterSignup />
         <ProductShowcase />
-        <NutritionGoals />
+        <ScrollAnimatedSection />
         
         {/* Protein Benefits Section */}
         <section className="bg-gray-50 py-16">
