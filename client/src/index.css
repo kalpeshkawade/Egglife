@@ -121,6 +121,10 @@
     animation: float 3s ease-in-out infinite;
   }
 
+  .animate-bounce-text {
+    animation: bounce-text 0.6s ease-out;
+  }
+
   .animate-scroll-scale {
     transition: transform 100ms ease-out;
   }
@@ -298,6 +302,19 @@
 
 .animate-text-fade-in {
   animation: text-fade-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Bounce text animation for button hover */
+@keyframes bounce-text {
+  0%, 20%, 60%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
 }
 
 /* Oval Egg Shape Hover Animation */

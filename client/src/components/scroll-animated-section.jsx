@@ -90,75 +90,24 @@ export default function ScrollAnimatedSection() {
           
           {/* Content with scroll-based animations */}
           <div 
-            className={`space-y-6 transition-all duration-700 ${
+            className={`space-y-8 transition-all duration-700 ${
               isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
             }`}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark leading-tight tracking-tight">
               Meet your goals one macro at a time
             </h2>
             
-            {/* Animated nutrition stats */}
-            <div className="space-y-6">
-              <div 
-                className={`flex items-center space-x-4 transition-all duration-500 ${
-                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-x-10'
-                }`}
-                style={{ animationDelay: '0.2s' }}
-              >
-                <div className="bg-orange-primary text-white w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl transform hover:scale-110 transition-transform duration-200">
-                  1g
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-dark text-lg">CARBS</h3>
-                  <p className="text-gray-medium text-sm">per serving</p>
-                </div>
-              </div>
-              
-              <div 
-                className={`flex items-center space-x-4 transition-all duration-500 ${
-                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-x-10'
-                }`}
-                style={{ animationDelay: '0.4s' }}
-              >
-                <div className="bg-green-accent text-white w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl transform hover:scale-110 transition-transform duration-200">
-                  5g
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-dark text-lg">PROTEIN</h3>
-                  <p className="text-gray-medium text-sm">per serving</p>
-                </div>
-              </div>
-              
-              <div 
-                className={`flex items-center space-x-4 transition-all duration-500 ${
-                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-x-10'
-                }`}
-                style={{ animationDelay: '0.6s' }}
-              >
-                <div className="bg-blue-500 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl transform hover:scale-110 transition-transform duration-200">
-                  25
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-dark text-lg">CALORIES</h3>
-                  <p className="text-gray-medium text-sm">per serving</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Animated CTA button */}
+            {/* Animated CTA button with bounce effect */}
             <div 
-              className={`pt-4 transition-all duration-700 ${
+              className={`transition-all duration-700 ${
                 isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-y-10'
               }`}
-              style={{ animationDelay: '0.8s' }}
+              style={{ animationDelay: '0.2s' }}
             >
               <Link href="/learn/our-wraps">
-                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg overflow-hidden">
-                  <span className="relative z-10 transition-all duration-300 group-hover:animate-slide-out-up">
-                    See how we stack up
-                  </span>
-                  <span className="absolute inset-0 flex items-center justify-center text-white transition-all duration-300 transform translate-y-full group-hover:animate-slide-up">
+                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg overflow-hidden">
+                  <span className="relative z-10 transition-all duration-300 group-hover:animate-bounce-text">
                     See how we stack up
                   </span>
                   
@@ -166,6 +115,60 @@ export default function ScrollAnimatedSection() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
                 </button>
               </Link>
+            </div>
+            
+            {/* Large nutrition stats display */}
+            <div className="grid grid-cols-3 gap-8 pt-8">
+              <div 
+                className={`text-center transition-all duration-500 ${
+                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ animationDelay: '0.4s' }}
+              >
+                <div className="text-6xl lg:text-7xl font-bold text-orange-primary mb-2">
+                  &lt;3g
+                </div>
+                <div className="text-lg font-semibold text-gray-dark uppercase tracking-wider">
+                  CARBS
+                </div>
+                <div className="text-sm text-gray-medium">
+                  per serving
+                </div>
+              </div>
+              
+              <div 
+                className={`text-center transition-all duration-500 ${
+                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ animationDelay: '0.6s' }}
+              >
+                <div className="text-6xl lg:text-7xl font-bold text-green-accent mb-2">
+                  11g+
+                </div>
+                <div className="text-lg font-semibold text-gray-dark uppercase tracking-wider">
+                  PROTEIN
+                </div>
+                <div className="text-sm text-gray-medium">
+                  per serving
+                </div>
+              </div>
+              
+              <div 
+                className={`text-center transition-all duration-500 ${
+                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ animationDelay: '0.8s' }}
+              >
+                <div className="text-6xl lg:text-7xl font-bold text-blue-500 mb-2">
+                  &lt;70
+                </div>
+                <div className="text-lg font-semibold text-gray-dark uppercase tracking-wider">
+                  CALORIES
+                </div>
+                <div className="text-sm text-gray-medium">
+                  per serving
+                </div>
+              </div>
             </div>
           </div>
         </div>
