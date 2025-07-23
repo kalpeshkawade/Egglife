@@ -36,7 +36,12 @@ export const recipes = pgTable("recipes", {
 
 export const newsletters = pgTable("newsletters", {
   id: serial("id").primaryKey(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
   email: text("email").notNull().unique(),
+  country: text("country").notNull(),
+  zipCode: text("zip_code").notNull(),
+  recipeType: text("recipe_type").notNull(),
   subscribedAt: text("subscribed_at").notNull(),
 });
 

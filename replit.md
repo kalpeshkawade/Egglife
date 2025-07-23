@@ -11,6 +11,8 @@ This is a full-stack web application for EggLife, a brand that specializes in eg
 - **Advanced Button Effects**: Added sophisticated hover effects to "Find where to buy" button with text sliding animations
 - **Custom Animations**: Created comprehensive CSS animation library including fade-in, product-reveal, shimmer, and slide effects
 - **Component Updates**: Replaced ProductCarousel with AnimatedProductDisplay for better visual impact
+- **Newsletter Form Enhancement**: Updated newsletter signup with comprehensive form including first name, last name, email, country, zip code, and recipe preferences
+- **Scroll-based Animations**: Added subtle scaling effects that respond to scroll position for enhanced user experience
 
 ## User Preferences
 
