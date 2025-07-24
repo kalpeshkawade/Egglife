@@ -125,7 +125,7 @@ export default function FoodFreedomSection() {
             }`}
             style={{ animationDelay: '0.1s' }}
           >
-            {/* Main hand holding wrap image */}
+            {/* Main hand holding wrap image with overlapping stickers */}
             <div className="relative mb-8">
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe894c_hand.webp"
@@ -138,23 +138,23 @@ export default function FoodFreedomSection() {
               
               {/* Subtle glow effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-green-accent/5 to-transparent rounded-xl pointer-events-none" />
-            </div>
-
-            {/* Desktop dietary stickers */}
-            <div 
-              className={`hidden lg:block transition-all duration-700 ${
-                isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ animationDelay: '0.3s' }}
-            >
-              <img 
-                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe89d5_Stickers-mobile.svg"
-                alt="collection of dietary stickers" 
-                className="w-full max-w-lg mx-auto transform hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.target.src = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=200";
-                }}
-              />
+              
+              {/* Desktop dietary stickers - overlapping at bottom */}
+              <div 
+                className={`hidden lg:block absolute -bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
+                  isVisible ? 'animate-text-fade-in' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ animationDelay: '0.3s' }}
+              >
+                <img 
+                  src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe89d5_Stickers-mobile.svg"
+                  alt="collection of dietary stickers" 
+                  className="w-40 md:w-48 lg:w-56 xl:w-64 h-auto transform hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.src = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=200";
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
