@@ -130,7 +130,7 @@ export default function FoodFreedomSection() {
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe894c_hand.webp"
                 alt="hand holding a breakfast burrito made from an egglife egg white wrap" 
-                className="w-full h-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
+                className="w-4/5 md:w-3/4 lg:w-2/3 xl:w-3/5 h-auto mx-auto rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400";
                 }}
