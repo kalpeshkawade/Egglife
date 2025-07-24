@@ -83,7 +83,7 @@ export default function HeroSection() {
               </div>
               <p className="text-xl lg:text-2xl text-gray-medium mb-10 relative" style={{ mixBlendMode: 'multiply' }}>Wraps made with egg whites, not flour.</p>
               <Link href="/where-to-buy">
-                <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                   <span className="relative z-10 flex">
                     {['F', 'i', 'n', 'd', ' ', 'w', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'b', 'u', 'y'].map((letter, index) => (
                       <span

@@ -187,7 +187,7 @@ export default function InfinitePossibilitiesSection() {
             style={{ animationDelay: '0.2s' }}
           >
             <Link href="/recipes-hub">
-              <button className="group relative bg-orange-primary text-white px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+              <button className="group relative bg-orange-primary text-white px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                 <span className="relative z-10 flex">
                   {['G', 'e', 't', ' ', 's', 't', 'a', 'r', 't', 'e', 'd'].map((letter, index) => (
                     <span

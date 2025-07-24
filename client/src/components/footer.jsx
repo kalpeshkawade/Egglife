@@ -18,7 +18,7 @@ export default function Footer() {
                 Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
               </p>
               <Link href="/newsletter">
-                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8">
+                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8">
                   <span className="relative z-10 flex">
                     {['J', 'o', 'i', 'n', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'].map((letter, index) => (
                       <span

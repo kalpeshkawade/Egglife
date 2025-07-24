@@ -71,7 +71,7 @@ export default function ScrollAnimatedSection() {
             </h2>
             
             <Link href="/learn/our-wraps">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-12">
+              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-12">
                 <span className="relative z-10 flex">
                   {['S', 'e', 'e', ' ', 'h', 'o', 'w', ' ', 'w', 'e', ' ', 's', 't', 'a', 'c', 'k', ' ', 'u', 'p'].map((letter, index) => (
                     <span

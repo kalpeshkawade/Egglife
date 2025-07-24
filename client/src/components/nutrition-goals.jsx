@@ -50,7 +50,7 @@ export default function NutritionGoals() {
             </div>
             
             <Link href="/learn/our-wraps">
-              <button className="bg-orange-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+              <button className="bg-orange-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors">
                 See how we stack up
               </button>
             </Link>

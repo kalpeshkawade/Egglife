@@ -129,7 +129,7 @@ export default function ProductDetail() {
                   </div>
 
                   <Link href="/where-to-buy">
-                    <button className="group relative bg-orange-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                    <button className="group relative bg-orange-primary text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                       <span className="relative z-10 flex">
                         {['F', 'i', 'n', 'd', ' ', 'W', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'B', 'u', 'y'].map((letter, index) => (
                           <span

@@ -182,7 +182,7 @@ export default function LearnOurWraps() {
                       </div>
                       
                       <Link href={`/product/${product.slug}`}>
-                        <button className="group relative w-full mt-6 bg-orange-primary text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                        <button className="group relative w-full mt-6 bg-orange-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                           <span className="relative z-10 flex justify-center">
                             {['L', 'e', 'a', 'r', 'n', ' ', 'M', 'o', 'r', 'e'].map((letter, index) => (
                               <span

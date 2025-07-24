@@ -31,7 +31,7 @@ export default function PerfectProteinSection() {
             
             {/* Animated CTA button with wavy text effect */}
             <Link href="/learn/why-egg-whites">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                 <span className="relative z-10 flex">
                   {['W', 'h', 'y', ' ', 'e', 'g', 'g', ' ', 'w', 'h', 'i', 't', 'e', 's'].map((letter, index) => (
                     <span

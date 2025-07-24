@@ -77,7 +77,7 @@ export default function FoodFreedomSection() {
               style={{ animationDelay: '0.2s' }}
             >
               <Link href="/learn/why-we-do-it">
-                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                   <span className="relative z-10 flex">
                     {['W', 'h', 'y', ' ', 'w', 'e', ' ', 'd', 'o', ' ', 'i', 't'].map((letter, index) => (
                       <span
