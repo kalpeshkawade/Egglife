@@ -6,7 +6,7 @@ import ProductShowcase from "@/components/product-showcase";
 import ScrollAnimatedSection from "@/components/scroll-animated-section";
 import PerfectProteinSection from "@/components/perfect-protein-section";
 import FoodFreedomSection from "@/components/food-freedom-section";
-import RecipeCarousel from "@/components/recipe-carousel";
+import InfinitePossibilitiesSection from "@/components/infinite-possibilities-section";
 
 export default function Home() {
   return (
@@ -20,8 +20,7 @@ export default function Home() {
         <ScrollAnimatedSection />
         <PerfectProteinSection />
         <FoodFreedomSection />
-
-        <RecipeCarousel />
+        <InfinitePossibilitiesSection />
       </main>
       
       <Footer />
