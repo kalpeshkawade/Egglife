@@ -102,20 +102,20 @@ export default function NewsletterSignup() {
           className="max-w-7xl mx-auto transition-transform duration-300 ease-out"
           style={{ transform: `scale(${scale})` }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Left Side - Information with EggLife Logo */}
             <div className="text-center lg:text-left">
               {/* EggLife Logo */}
-              <div className="relative inline-block mb-8">
+              <div className="relative inline-block mb-6 lg:mb-8">
                 <img 
                   src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d9f02ec6d1f46ad4430fa9_fe036674a234ee67521d50fbc4945cd8_Vector.svg"
                   alt="EggLife Logo"
-                  className="w-20 h-20 mx-auto"
+                  className="w-16 h-16 sm:w-20 sm:h-20 mx-auto lg:mx-0"
                 />
               </div>
 
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
                 Join our culinary community
               </h2>
               
@@ -125,19 +125,19 @@ export default function NewsletterSignup() {
                 </div>
               </div>
 
-              <p className="text-lg text-white/90 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/90 leading-relaxed px-4 lg:px-0">
                 Stay up to date, discover delicious recipes, and get <span className="font-bold text-orange-300">$2.00 back</span> on your first in-store purchase of egglife egg white wraps
               </p>
             </div>
 
             {/* Right Side - Form */}
             <div 
-              className="p-8 rounded-3xl shadow-xl border-2 border-white/20"
+              className="p-4 sm:p-6 lg:p-8 rounded-3xl shadow-xl border-2 border-white/20"
               style={{ backgroundColor: '#521FCC' }}
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 {/* Name Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold text-white mb-2">
                       First name*

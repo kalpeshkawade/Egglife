@@ -54,18 +54,18 @@ export default function FoodFreedomSection() {
         <div className="absolute bottom-1/3 right-1/5 w-3 h-3 bg-orange-primary/25 rounded-full animate-float" style={{ animationDelay: '2s' }} />
       </div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content section */}
           <div 
-            className={`space-y-8 transition-all duration-700 ${
+            className={`space-y-6 lg:space-y-8 text-center lg:text-left px-4 lg:px-0 transition-all duration-700 ${
               isVisible ? 'animate-fade-in' : 'opacity-0 translate-x-10'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
               We stand for<br />food‍ <span style={{ color: '#ec4899' }}>freedom</span>
             </h2>
             
-            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed font-normal">
               Taste and nutrition are not mutually exclusive. Enjoy the foods you love and flavors you crave, regardless of dietary lifestyle.
             </p>
             
@@ -77,7 +77,7 @@ export default function FoodFreedomSection() {
               style={{ animationDelay: '0.2s' }}
             >
               <Link href="/learn/why-we-do-it">
-                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                <button className="group relative bg-orange-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                   <span className="relative z-10 flex">
                     {['W', 'h', 'y', ' ', 'w', 'e', ' ', 'd', 'o', ' ', 'i', 't'].map((letter, index) => (
                       <span

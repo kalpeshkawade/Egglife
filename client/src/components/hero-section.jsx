@@ -79,10 +79,10 @@ export default function HeroSection() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-6">
               <div className="space-y-4 mb-8">
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark relative">
-                  <span style={{ mixBlendMode: 'multiply' }}>The Perfect Wrap<sup className="text-lg">®</sup></span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark relative">
+                  <span style={{ mixBlendMode: 'multiply' }}>The Perfect Wrap<sup className="text-sm md:text-lg">®</sup></span>
                 </h1>
-                <div className="text-3xl lg:text-5xl xl:text-6xl font-bold text-gray-dark flex flex-wrap items-center justify-center gap-x-4">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-dark flex flex-wrap items-center justify-center gap-x-2 md:gap-x-4">
                   <span>for</span>
                   <span 
                     key={currentTextIndex}
@@ -92,9 +92,9 @@ export default function HeroSection() {
                   </span>
                 </div>
               </div>
-              <p className="text-xl lg:text-2xl text-gray-medium mb-10 relative" style={{ mixBlendMode: 'multiply' }}>Wraps made with egg whites, not flour.</p>
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-medium mb-10 relative px-4" style={{ mixBlendMode: 'multiply' }}>Wraps made with egg whites, not flour.</p>
               <Link href="/where-to-buy">
-                <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                <button className="group relative bg-orange-primary text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mx-4">
                   <span className="relative z-10 flex">
                     {['F', 'i', 'n', 'd', ' ', 'w', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'b', 'u', 'y'].map((letter, index) => (
                       <span

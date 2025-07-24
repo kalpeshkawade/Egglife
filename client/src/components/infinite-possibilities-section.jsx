@@ -4,7 +4,7 @@ import { Link } from "wouter";
 // Recipe Card Component with dynamic border colors
 function RecipeCard({ recipe }) {
   return (
-    <div className="flex-none w-80 mx-3 my-2">
+    <div className="flex-none w-64 sm:w-72 lg:w-80 mx-2 sm:mx-3 my-2">
       <Link href={`/recipes/${recipe.slug}`}>
         <div className="group cursor-pointer">
           <div 
@@ -19,7 +19,7 @@ function RecipeCard({ recipe }) {
               <img
                 src={recipe.image}
                 alt={recipe.title}
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-40 sm:h-44 lg:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300";
                 }}
@@ -167,15 +167,15 @@ export default function InfinitePossibilitiesSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header section */}
         <div 
-          className={`text-center space-y-6 mb-16 transition-all duration-700 ${
+          className={`text-center space-y-4 sm:space-y-6 mb-12 lg:mb-16 px-4 transition-all duration-700 ${
             isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
             Six <span style={{ color: '#ec4899' }}>flavors</span>. <span style={{ color: '#521FCC' }}>Infinite possibilities.</span>
           </h2>
           
-          <p className="text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto font-normal" style={{ color: '#521FCC' }}>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto font-normal" style={{ color: '#521FCC' }}>
             Over 150 ways to reimagine every meal.
           </p>
           
@@ -187,7 +187,7 @@ export default function InfinitePossibilitiesSection() {
             style={{ animationDelay: '0.2s' }}
           >
             <Link href="/recipes-hub">
-              <button className="group relative bg-orange-primary text-white px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+              <button className="group relative bg-orange-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                 <span className="relative z-10 flex">
                   {['G', 'e', 't', ' ', 's', 't', 'a', 'r', 't', 'e', 'd'].map((letter, index) => (
                     <span
@@ -212,9 +212,9 @@ export default function InfinitePossibilitiesSection() {
         </div>
 
         {/* Continuous moving carousel */}
-        <div className="relative overflow-hidden py-4">
+        <div className="relative overflow-hidden py-2 sm:py-4">
           {/* First row - moves left to right */}
-          <div className="flex animate-scroll-right mb-6" style={{ paddingTop: '8px', paddingBottom: '8px' }}>
+          <div className="flex animate-scroll-right mb-4 sm:mb-6" style={{ paddingTop: '4px', paddingBottom: '4px' }}>
             {/* Duplicate recipes for seamless loop */}
             {[...recipes, ...recipes].map((recipe, index) => (
               <RecipeCard key={`${recipe.id}-${index}`} recipe={recipe} />
@@ -222,7 +222,7 @@ export default function InfinitePossibilitiesSection() {
           </div>
 
           {/* Second row - moves right to left (reverse) */}
-          <div className="flex animate-scroll-left" style={{ paddingTop: '8px', paddingBottom: '8px' }}>
+          <div className="flex animate-scroll-left" style={{ paddingTop: '4px', paddingBottom: '4px' }}>
             {/* Duplicate recipes for seamless loop */}
             {[...recipes, ...recipes].reverse().map((recipe, index) => (
               <RecipeCard key={`reverse-${recipe.id}-${index}`} recipe={recipe} />

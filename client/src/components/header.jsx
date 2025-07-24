@@ -10,21 +10,21 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between py-4">
+        <nav className="flex items-center justify-between py-3 sm:py-4">
           {/* EggLife Brand Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-primary to-orange-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                <span className="text-white font-bold text-lg">E</span>
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-orange-primary to-orange-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                <span className="text-white font-bold text-sm sm:text-lg">E</span>
               </div>
-              <span className="text-2xl font-bold text-gray-dark tracking-wide">
+              <span className="text-xl sm:text-2xl font-bold text-gray-dark tracking-wide">
                 Egg<span className="text-orange-primary">Life</span>
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link 
               href="/learn/our-wraps" 
               className="text-gray-dark font-medium hover:text-orange-primary"
@@ -111,18 +111,18 @@ export default function Header() {
           </div>
 
           {/* User Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <button className="text-gray-dark hover:text-orange-primary">
-              <User size={20} />
+          <div className="hidden lg:flex items-center space-x-3">
+            <button className="text-gray-dark hover:text-orange-primary p-2">
+              <User size={18} />
             </button>
-            <button className="text-gray-dark hover:text-orange-primary">
-              <ShoppingCart size={20} />
+            <button className="text-gray-dark hover:text-orange-primary p-2">
+              <ShoppingCart size={18} />
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden text-gray-dark"
+            className="lg:hidden text-gray-dark p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

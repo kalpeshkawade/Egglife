@@ -6,19 +6,19 @@ export default function Footer() {
     <footer className="py-16" style={{ backgroundColor: '#EAE5FA' }}>
       <div className="container mx-auto px-4">
         {/* Main Footer Content - Two Column Layout with White Background */}
-        <div className="bg-white rounded-2xl p-12 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-12 mb-8 lg:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           
             {/* Left Side - Community Section */}
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" style={{ color: '#521FCC' }}>
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 lg:mb-6 leading-tight" style={{ color: '#521FCC' }}>
                 JOIN OUR COMMUNITY
               </h2>
-              <p className="text-xl mb-8 leading-relaxed" style={{ color: '#521FCC' }}>
+              <p className="text-base sm:text-lg lg:text-xl mb-6 lg:mb-8 leading-relaxed px-4 lg:px-0" style={{ color: '#521FCC' }}>
                 Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
               </p>
               <Link href="/newsletter">
-                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8">
+                <button className="group relative bg-orange-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-6 lg:mb-8">
                   <span className="relative z-10 flex">
                     {['J', 'o', 'i', 'n', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'].map((letter, index) => (
                       <span
@@ -54,10 +54,10 @@ export default function Footer() {
             </div>
 
             {/* Right Side - Navigation Links */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {/* More Info Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
+              <div className="text-center sm:text-left">
+                <h3 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
                   MORE INFO
                 </h3>
                 <ul className="space-y-3" style={{ color: '#521FCC' }}>
@@ -71,8 +71,8 @@ export default function Footer() {
               </div>
               
               {/* Reach Out Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
+              <div className="text-center sm:text-left">
+                <h3 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
                   REACH OUT
                 </h3>
                 <ul className="space-y-3" style={{ color: '#521FCC' }}>
@@ -84,8 +84,8 @@ export default function Footer() {
               </div>
               
               {/* Resources Column */}
-              <div>
-                <h3 className="font-bold text-lg mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
+              <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
+                <h3 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
                   RESOURCES
                 </h3>
                 <ul className="space-y-3" style={{ color: '#521FCC' }}>
@@ -100,9 +100,9 @@ export default function Footer() {
         {/* Bottom Section with Logos and Copyright */}
         <div className="border-t border-gray-300 pt-8">
           {/* Social Media and Partner Logos */}
-          <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
             {/* Social Media Icons */}
-            <div className="flex space-x-6 mb-4 md:mb-0">
+            <div className="flex space-x-4 sm:space-x-6 mb-4 sm:mb-0">
               <a href="#" className="text-gray-medium hover:text-orange-primary transition-colors">
                 <Facebook size={24} />
               </a>

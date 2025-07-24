@@ -66,12 +66,12 @@ export default function ScrollAnimatedSection() {
         {/* Content positioned over the image */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight tracking-tight">
               Meet your goals one macro at a time
             </h2>
             
             <Link href="/learn/our-wraps">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-12">
+              <button className="group relative bg-orange-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8 sm:mb-12">
                 <span className="relative z-10 flex">
                   {['S', 'e', 'e', ' ', 'h', 'o', 'w', ' ', 'w', 'e', ' ', 's', 't', 'a', 'c', 'k', ' ', 'u', 'p'].map((letter, index) => (
                     <span
@@ -94,12 +94,12 @@ export default function ScrollAnimatedSection() {
             </Link>
 
             {/* Nutrition stats positioned directly below button */}
-            <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white mb-1 sm:mb-2">
                   &lt;3g
                 </div>
-                <div className="text-lg md:text-xl font-bold text-white uppercase tracking-wider mb-1">
+                <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white uppercase tracking-wider mb-1">
                   CARBS
                 </div>
                 <div className="text-sm md:text-base text-white/80">
