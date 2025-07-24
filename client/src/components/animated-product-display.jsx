@@ -11,8 +11,18 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
   });
 
   // Filter only wrap products that have matching brand colors
+  // Map product slugs to color keys
+  const slugToColorMap = {
+    'original-wrap': 'original',
+    'southwest-wrap': 'southwest', 
+    'everything-bagel-wrap': 'everything-bagel',
+    'roasted-garlic-herb-wrap': 'roasted-garlic-herb',
+    'sweet-cinnamon-wrap': 'sweet-cinnamon',
+    'garden-salsa-wrap': 'garden-salsa'
+  };
+  
   const wrapProducts = products.filter(product => 
-    product.category === "wrap" && productColors[product.slug]
+    product.category === "wrap" && slugToColorMap[product.slug]
   );
 
   // Sync with hero section product index
@@ -48,7 +58,8 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
   }
 
   const currentProduct = wrapProducts[currentIndex];
-  const currentColors = productColors[currentProduct?.slug] || productColors.original;
+  const colorKey = slugToColorMap[currentProduct?.slug] || 'original';
+  const currentColors = productColors[colorKey] || productColors.original;
 
   return (
     <div 
