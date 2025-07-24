@@ -56,20 +56,20 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       style={{
         backgroundColor: currentColors.background,
         marginLeft: 'calc(-50vw + 50%)',
-        minHeight: '100vh'
+        minHeight: '80vh'
       }}
     >
-      <div className="flex justify-center items-end relative overflow-hidden min-h-[100vh]">
+      <div className="flex justify-center items-end relative overflow-hidden min-h-[80vh]">
       
       {/* Single Product Display */}
       <div className="relative w-full mx-auto z-10">
-        {/* Much larger white semicircle background from bottom matching original website */}
-        <div className="relative h-[700px] flex items-end justify-center">
+        {/* White semicircle background from bottom */}
+        <div className="relative h-[600px] flex items-end justify-center">
           <div 
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[250vw] h-[120vh] bg-white shadow-2xl transition-all duration-1000 ease-in-out"
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[180vw] h-[90vh] bg-white shadow-2xl transition-all duration-1000 ease-in-out"
             style={{
               clipPath: 'ellipse(50% 100% at 50% 100%)',
-              boxShadow: `0 -60px 180px ${currentColors.primary}20, 0 0 300px ${currentColors.background}25`
+              boxShadow: `0 -40px 120px ${currentColors.primary}15, 0 0 200px ${currentColors.background}20`
             }}
           />
           
@@ -87,23 +87,23 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
                 <img 
                   src={currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
-                  className="w-[400px] h-[32rem] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
+                  className="w-96 h-[28rem] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
                   style={{ 
-                    transform: 'translateY(-100px)' // Makes image sit well above larger semicircle
+                    transform: 'translateY(-60px)' // Makes image sit above semicircle
                   }}
                 />
               </div>
             </div>
 
             {/* Product name positioned on the semicircle */}
-            <div className="text-center absolute bottom-40 left-1/2 transform -translate-x-1/2 z-30">
+            <div className="text-center absolute bottom-32 left-1/2 transform -translate-x-1/2 z-30">
               <h3 
-                className="text-5xl font-bold mb-6 animate-text-fade-in transition-colors duration-700"
+                className="text-4xl font-bold mb-4 animate-text-fade-in transition-colors duration-700"
                 style={{ color: currentColors.primary }}
               >
                 {currentProduct.name}
               </h3>
-              <p className="text-gray-medium text-xl leading-relaxed animate-text-fade-in delay-100 max-w-2xl mx-auto">
+              <p className="text-gray-medium text-lg leading-relaxed animate-text-fade-in delay-100 max-w-lg mx-auto">
                 {currentProduct.description}
               </p>
             </div>
