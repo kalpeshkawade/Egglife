@@ -91,6 +91,40 @@ export const dietaryBadges = [
   'Dairy Free'
 ];
 
+// Product brand colors matching the original website
+export const productColors = {
+  original: {
+    primary: '#f97316', // Orange
+    secondary: '#ea580c',
+    background: 'rgba(249, 115, 22, 0.1)'
+  },
+  southwest: {
+    primary: '#dc2626', // Red
+    secondary: '#b91c1c',
+    background: 'rgba(220, 38, 38, 0.1)'
+  },
+  everythingBagel: {
+    primary: '#a855f7', // Purple
+    secondary: '#9333ea',
+    background: 'rgba(168, 85, 247, 0.1)'
+  },
+  roastedGarlicHerb: {
+    primary: '#22c55e', // Green
+    secondary: '#16a34a',
+    background: 'rgba(34, 197, 94, 0.1)'
+  },
+  sweetCinnamon: {
+    primary: '#ca8a04', // Yellow/Gold
+    secondary: '#a16207',
+    background: 'rgba(202, 138, 4, 0.1)'
+  },
+  gardenSalsa: {
+    primary: '#06b6d4', // Cyan
+    secondary: '#0891b2',
+    background: 'rgba(6, 182, 212, 0.1)'
+  }
+};
+
 // Helper function to get product by slug
 export const getProductBySlug = (products, slug) => {
   return products.find(product => product.slug === slug);

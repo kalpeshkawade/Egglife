@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { productColors } from "../data/products.js";
 
 export default function AnimatedProductDisplay() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,29 +59,37 @@ export default function AnimatedProductDisplay() {
   }
 
   const currentProduct = wrapProducts[currentIndex];
+  const currentColors = productColors[currentProduct?.slug] || productColors.original;
 
   return (
-    <div className="flex justify-center items-center relative">
+    <div className="flex justify-center items-center relative overflow-hidden">
+      {/* Dynamic background color that changes with product */}
+      <div 
+        className="absolute inset-0 transition-all duration-1000 ease-in-out"
+        style={{
+          background: `linear-gradient(135deg, ${currentColors.background} 0%, transparent 70%)`
+        }}
+      />
+      
       {/* Single Product Display */}
-      <div className="relative max-w-sm mx-auto">
-        <div 
-          key={`${currentProduct.id}-${currentIndex}`}
-          className={`relative bg-white rounded-2xl p-8 shadow-2xl border-2 border-orange-primary/20 transition-all duration-800 ease-out ${
-            isAnimating 
-              ? "opacity-0 transform scale-95 translate-y-8" 
-              : "opacity-100 transform scale-100 translate-y-0 animate-product-reveal"
-          }`}
-        >
-          {/* Shimmer effect background */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer"></div>
-          </div>
+      <div className="relative max-w-sm mx-auto z-10">
+        {/* White semicircle background */}
+        <div className="relative">
+          <div 
+            className="absolute -top-32 -left-32 w-96 h-96 bg-white rounded-full shadow-2xl transition-all duration-1000 ease-in-out"
+            style={{
+              boxShadow: `0 20px 60px ${currentColors.primary}20, 0 0 100px ${currentColors.background}`
+            }}
+          />
           
-          {/* Floating glow effect */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-orange-400/20 via-orange-primary/30 to-orange-400/20 rounded-2xl blur-xl animate-pulse"></div>
-          
-          {/* Product container */}
-          <div className="relative z-10">
+          <div 
+            key={`${currentProduct.id}-${currentIndex}`}
+            className={`relative z-10 p-8 transition-all duration-800 ease-out ${
+              isAnimating 
+                ? "opacity-0 transform scale-95 translate-y-8" 
+                : "opacity-100 transform scale-100 translate-y-0 animate-product-reveal"
+            }`}
+          >
             {/* Product image with floating animation */}
             <div className="relative mb-6 animate-float">
               <img 
@@ -88,26 +97,19 @@ export default function AnimatedProductDisplay() {
                 alt={`${currentProduct.name} Egg White Wraps`} 
                 className="w-full h-64 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
               />
-              
-              {/* Sparkle effects */}
-              <div className="absolute top-4 right-4 w-3 h-3 bg-orange-primary rounded-full animate-pulse"></div>
-              <div className="absolute bottom-6 left-6 w-2 h-2 bg-yellow-400 rounded-full animate-pulse delay-500"></div>
-              <div className="absolute top-1/2 left-2 w-1.5 h-1.5 bg-green-accent rounded-full animate-pulse delay-1000"></div>
             </div>
 
             {/* Product name with enhanced typography */}
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-gray-dark mb-2 animate-text-fade-in">
+              <h3 
+                className="text-2xl font-bold mb-2 animate-text-fade-in transition-colors duration-700"
+                style={{ color: currentColors.primary }}
+              >
                 {currentProduct.name}
               </h3>
               <p className="text-gray-medium text-sm leading-relaxed animate-text-fade-in delay-100">
                 {currentProduct.description}
               </p>
-            </div>
-
-            {/* Premium badge */}
-            <div className="absolute -top-3 -right-3 bg-orange-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-bounce">
-              Premium
             </div>
           </div>
         </div>
@@ -128,12 +130,19 @@ export default function AnimatedProductDisplay() {
               }}
               className={`transition-all duration-300 rounded-full ${
                 index === currentIndex 
-                  ? "w-8 h-3 bg-orange-primary shadow-lg" 
+                  ? "w-8 h-3 shadow-lg" 
                   : "w-3 h-3 bg-gray-300 hover:bg-gray-400 hover:scale-110"
               }`}
+              style={index === currentIndex ? {
+                backgroundColor: currentColors.primary,
+                boxShadow: `0 4px 12px ${currentColors.primary}40`
+              } : {}}
             >
               {index === currentIndex && (
-                <div className="w-full h-full bg-orange-primary/50 rounded-full animate-pulse"></div>
+                <div 
+                  className="w-full h-full rounded-full animate-pulse"
+                  style={{ backgroundColor: `${currentColors.primary}50` }}
+                />
               )}
             </button>
           ))}
