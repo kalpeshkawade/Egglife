@@ -80,7 +80,7 @@ export default function Header() {
                 {
                   title: "Why Egg Whites",
                   href: "/learn/why-egg-whites",
-                  image: "https://images.unsplash.com/photo-1569288052389-ddc8e049ed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64"
+                  image: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8943_hm-protein%20.webp"
                 },
                 {
                   title: "FAQs",
