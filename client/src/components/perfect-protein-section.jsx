@@ -18,21 +18,21 @@ export default function PerfectProteinSection() {
       <div className="container mx-auto px-4 relative z-10 min-h-[70vh] flex flex-col justify-between">
         {/* Title at top left */}
         <div className="flex justify-start">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-dark leading-tight tracking-tight max-w-md">
+          <h2 className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-dark leading-tight tracking-tight max-w-lg">
             The perfect protein
           </h2>
         </div>
         
         {/* Description and button at bottom right */}
         <div className="flex justify-end">
-          <div className="max-w-md text-right space-y-6">
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-dark leading-relaxed">
+          <div className="max-w-lg text-right space-y-6">
+            <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-dark leading-relaxed font-medium">
               Heart-healthy and packed with necessary nutrients, egg whites are the ultimate protein for every body.
             </p>
             
             {/* Animated CTA button with wavy text effect */}
             <Link href="/learn/why-egg-whites">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+              <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-xl md:text-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                 <span className="relative z-10 flex">
                   {['W', 'h', 'y', ' ', 'e', 'g', 'g', ' ', 'w', 'h', 'i', 't', 'e', 's'].map((letter, index) => (
                     <span

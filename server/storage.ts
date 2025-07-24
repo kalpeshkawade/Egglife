@@ -406,7 +406,13 @@ export class MemStorage implements IStorage {
 
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
     const id = this.currentProductId++;
-    const product: Product = { ...insertProduct, id };
+    const product: Product = { 
+      ...insertProduct, 
+      id,
+      hoverImageUrl: insertProduct.hoverImageUrl || null,
+      ingredients: insertProduct.ingredients || null,
+      isAvailable: insertProduct.isAvailable ?? true
+    };
     this.products.set(id, product);
     return product;
   }
@@ -432,7 +438,15 @@ export class MemStorage implements IStorage {
 
   async createRecipe(insertRecipe: InsertRecipe): Promise<Recipe> {
     const id = this.currentRecipeId++;
-    const recipe: Recipe = { ...insertRecipe, id };
+    const recipe: Recipe = { 
+      ...insertRecipe, 
+      id,
+      nutrition: insertRecipe.nutrition || null,
+      prepTime: insertRecipe.prepTime || null,
+      cookTime: insertRecipe.cookTime || null,
+      tags: insertRecipe.tags || null,
+      productId: insertRecipe.productId || null
+    };
     this.recipes.set(id, recipe);
     return recipe;
   }
