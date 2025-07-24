@@ -146,7 +146,8 @@ export default function InfinitePossibilitiesSection() {
   return (
     <section 
       id="infinite-possibilities-section"
-      className="relative bg-gray-50 py-20 overflow-hidden"
+      className="relative py-20 overflow-hidden"
+      style={{ backgroundColor: '#EAE5FA' }}
     >
       {/* Background animated elements */}
       <div className="absolute inset-0 pointer-events-none">

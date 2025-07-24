@@ -3,17 +3,17 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-dark text-white py-16">
+    <footer className="py-16" style={{ backgroundColor: '#EAE5FA' }}>
       <div className="container mx-auto px-4">
         {/* Main Footer Content - Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           
           {/* Left Side - Community Section */}
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-6 leading-tight">
               JOIN OUR COMMUNITY
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-medium mb-8 leading-relaxed">
               Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
             </p>
             <Link href="/newsletter">
@@ -53,10 +53,10 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* More Info Column */}
             <div>
-              <h3 className="font-bold text-white text-lg mb-6 uppercase tracking-wider">
+              <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
                 MORE INFO
               </h3>
-              <ul className="space-y-3 text-gray-300">
+              <ul className="space-y-3 text-gray-medium">
                 <li><Link href="/about" className="hover:text-orange-primary transition-colors">About Us</Link></li>
                 <li><Link href="/learn/faq" className="hover:text-orange-primary transition-colors">FAQs</Link></li>
                 <li><Link href="/blog" className="hover:text-orange-primary transition-colors">Blog</Link></li>
@@ -68,10 +68,10 @@ export default function Footer() {
             
             {/* Reach Out Column */}
             <div>
-              <h3 className="font-bold text-white text-lg mb-6 uppercase tracking-wider">
+              <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
                 REACH OUT
               </h3>
-              <ul className="space-y-3 text-gray-300">
+              <ul className="space-y-3 text-gray-medium">
                 <li><Link href="/contact" className="hover:text-orange-primary transition-colors">Contact Us</Link></li>
                 <li><Link href="/registered-dietitian" className="hover:text-orange-primary transition-colors">Registered Dietitian Program</Link></li>
                 <li><Link href="/kale-creator" className="hover:text-orange-primary transition-colors">Kale Creator Program</Link></li>
@@ -81,10 +81,10 @@ export default function Footer() {
             
             {/* Resources Column */}
             <div>
-              <h3 className="font-bold text-white text-lg mb-6 uppercase tracking-wider">
+              <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
                 RESOURCES
               </h3>
-              <ul className="space-y-3 text-gray-300">
+              <ul className="space-y-3 text-gray-medium">
                 <li><Link href="/terms" className="hover:text-orange-primary transition-colors">Terms of Service</Link></li>
                 <li><Link href="/privacy" className="hover:text-orange-primary transition-colors">Privacy Policy</Link></li>
               </ul>
@@ -93,21 +93,21 @@ export default function Footer() {
         </div>
         
         {/* Bottom Section with Logos and Copyright */}
-        <div className="border-t border-gray-600 pt-8">
+        <div className="border-t border-gray-300 pt-8">
           {/* Social Media and Partner Logos */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-6">
             {/* Social Media Icons */}
             <div className="flex space-x-6 mb-4 md:mb-0">
-              <a href="#" className="text-gray-300 hover:text-orange-primary transition-colors">
+              <a href="#" className="text-gray-medium hover:text-orange-primary transition-colors">
                 <Facebook size={24} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-orange-primary transition-colors">
+              <a href="#" className="text-gray-medium hover:text-orange-primary transition-colors">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-orange-primary transition-colors">
+              <a href="#" className="text-gray-medium hover:text-orange-primary transition-colors">
                 <Twitter size={24} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-orange-primary transition-colors">
+              <a href="#" className="text-gray-medium hover:text-orange-primary transition-colors">
                 <Youtube size={24} />
               </a>
             </div>
@@ -129,7 +129,7 @@ export default function Footer() {
           
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-medium text-sm">
               © Egglife Foods, Inc 2025. All Rights Reserved.
             </p>
           </div>
