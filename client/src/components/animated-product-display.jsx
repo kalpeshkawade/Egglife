@@ -73,10 +73,10 @@ export default function AnimatedProductDisplay() {
       
       {/* Single Product Display */}
       <div className="relative max-w-lg mx-auto z-10">
-        {/* White semicircle background */}
-        <div className="relative h-96">
+        {/* White semicircle background matching original website */}
+        <div className="relative h-96 flex items-center justify-center">
           <div 
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 h-40 bg-white shadow-2xl transition-all duration-1000 ease-in-out overflow-hidden"
+            className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-80 h-40 bg-white shadow-2xl transition-all duration-1000 ease-in-out"
             style={{
               clipPath: 'ellipse(50% 100% at 50% 100%)',
               boxShadow: `0 -10px 40px ${currentColors.primary}15, 0 0 80px ${currentColors.background}`
@@ -91,19 +91,20 @@ export default function AnimatedProductDisplay() {
                 : "opacity-100 transform scale-100 translate-y-0 animate-product-reveal"
             }`}
           >
-            {/* Product image positioned 80% inside semicircle, 20% outside */}
-            <div className="relative mb-6 animate-float">
-              <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
+            {/* Product image centered in semicircle, extending slightly above */}
+            <div className="relative animate-float">
+              <div className="flex items-center justify-center">
                 <img 
                   src={currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
-                  className="w-64 h-72 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+                  className="w-56 h-64 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+                  style={{ marginBottom: '2rem' }}
                 />
               </div>
             </div>
 
             {/* Product name positioned below semicircle */}
-            <div className="text-center mt-64">
+            <div className="text-center mt-8">
               <h3 
                 className="text-2xl font-bold mb-2 animate-text-fade-in transition-colors duration-700"
                 style={{ color: currentColors.primary }}
