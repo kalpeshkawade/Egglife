@@ -43,7 +43,7 @@ export default function Footer() {
               {/* EggLife Logo */}
               <div className="mt-8">
                 <img 
-                  src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe8983_egglife-logo-white.svg" 
+                  src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe89b1_egglife-logo-full-color.svg" 
                   alt="EggLife Foods Logo" 
                   className="h-12 w-auto"
                 />
@@ -117,13 +117,13 @@ export default function Footer() {
             {/* Partner/Certification Logos */}
             <div className="flex space-x-8 items-center">
               <img 
-                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe897d_logo-non-gmo-project.png" 
-                alt="Non-GMO Project Verified" 
+                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8afc_inc-5000-fastest-growing.webp" 
+                alt="Inc 5000 Fastest Growing" 
                 className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <img 
-                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe897e_logo-keto-certified.png" 
-                alt="Keto Certified" 
+                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8afd_good-housekeeping-best-snack.webp" 
+                alt="Good Housekeeping Best Snack" 
                 className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
