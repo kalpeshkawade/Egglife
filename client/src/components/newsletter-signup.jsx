@@ -106,18 +106,13 @@ export default function NewsletterSignup() {
             
             {/* Left Side - Information with EggLife Logo */}
             <div className="text-center lg:text-left">
-              {/* Badge with rolling supreme protein text */}
+              {/* EggLife Logo */}
               <div className="relative inline-block mb-8">
-                <div className="bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full p-6">
-                  <div className="bg-orange-primary rounded-full p-4">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-white">
-                      <path d="M16 2L19.09 8.26L26 9L21 14.74L22.18 21.02L16 17.77L9.82 21.02L11 14.74L6 9L12.91 8.26L16 2Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute -top-2 -right-2 bg-orange-primary text-white text-xs font-bold px-2 py-1 rounded-full">
-                  Premium
-                </div>
+                <img 
+                  src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d9f02ec6d1f46ad4430fa9_fe036674a234ee67521d50fbc4945cd8_Vector.svg"
+                  alt="EggLife Logo"
+                  className="w-20 h-20 mx-auto"
+                />
               </div>
 
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
