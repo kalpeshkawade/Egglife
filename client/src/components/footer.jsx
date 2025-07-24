@@ -5,89 +5,91 @@ export default function Footer() {
   return (
     <footer className="py-16" style={{ backgroundColor: '#EAE5FA' }}>
       <div className="container mx-auto px-4">
-        {/* Main Footer Content - Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+        {/* Main Footer Content - Two Column Layout with White Background */}
+        <div className="bg-white rounded-2xl p-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          {/* Left Side - Community Section */}
-          <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-6 leading-tight">
-              JOIN OUR COMMUNITY
-            </h2>
-            <p className="text-xl text-gray-medium mb-8 leading-relaxed">
-              Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
-            </p>
-            <Link href="/newsletter">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8">
-                <span className="relative z-10 flex">
-                  {['J', 'o', 'i', 'n', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'].map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
-                      style={{ 
-                        animationDelay: `${index * 0.05}s`,
-                        animationDuration: '1.2s',
-                        animationIterationCount: 'infinite'
-                      }}
-                    >
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </span>
-                  ))}
-                </span>
-                
-                {/* Button shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
-              </button>
-            </Link>
-            
-            {/* EggLife Logo */}
-            <div className="mt-8">
-              <img 
-                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe8983_egglife-logo-white.svg" 
-                alt="EggLife Foods Logo" 
-                className="h-12 w-auto"
-              />
+            {/* Left Side - Community Section */}
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-6 leading-tight">
+                JOIN OUR COMMUNITY
+              </h2>
+              <p className="text-xl text-gray-medium mb-8 leading-relaxed">
+                Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
+              </p>
+              <Link href="/newsletter">
+                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8">
+                  <span className="relative z-10 flex">
+                    {['J', 'o', 'i', 'n', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'].map((letter, index) => (
+                      <span
+                        key={index}
+                        className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
+                        style={{ 
+                          animationDelay: `${index * 0.05}s`,
+                          animationDuration: '1.2s',
+                          animationIterationCount: 'infinite'
+                        }}
+                      >
+                        {letter === ' ' ? '\u00A0' : letter}
+                      </span>
+                    ))}
+                  </span>
+                  
+                  {/* Button shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
+                </button>
+              </Link>
+              
+              {/* EggLife Logo */}
+              <div className="mt-8">
+                <img 
+                  src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe8983_egglife-logo-white.svg" 
+                  alt="EggLife Foods Logo" 
+                  className="h-12 w-auto"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Right Side - Navigation Links */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* More Info Column */}
-            <div>
-              <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
-                MORE INFO
-              </h3>
-              <ul className="space-y-3 text-gray-medium">
-                <li><Link href="/about" className="hover:text-orange-primary transition-colors">About Us</Link></li>
-                <li><Link href="/learn/faq" className="hover:text-orange-primary transition-colors">FAQs</Link></li>
-                <li><Link href="/blog" className="hover:text-orange-primary transition-colors">Blog</Link></li>
-                <li><Link href="/careers" className="hover:text-orange-primary transition-colors">Careers</Link></li>
-                <li><Link href="/patents" className="hover:text-orange-primary transition-colors">Patents</Link></li>
-                <li><Link href="/press" className="hover:text-orange-primary transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            {/* Reach Out Column */}
-            <div>
-              <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
-                REACH OUT
-              </h3>
-              <ul className="space-y-3 text-gray-medium">
-                <li><Link href="/contact" className="hover:text-orange-primary transition-colors">Contact Us</Link></li>
-                <li><Link href="/registered-dietitian" className="hover:text-orange-primary transition-colors">Registered Dietitian Program</Link></li>
-                <li><Link href="/kale-creator" className="hover:text-orange-primary transition-colors">Kale Creator Program</Link></li>
-                <li><Link href="/community" className="hover:text-orange-primary transition-colors">Customer Community</Link></li>
-              </ul>
-            </div>
-            
-            {/* Resources Column */}
-            <div>
-              <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
-                RESOURCES
-              </h3>
-              <ul className="space-y-3 text-gray-medium">
-                <li><Link href="/terms" className="hover:text-orange-primary transition-colors">Terms of Service</Link></li>
-                <li><Link href="/privacy" className="hover:text-orange-primary transition-colors">Privacy Policy</Link></li>
-              </ul>
+            {/* Right Side - Navigation Links */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* More Info Column */}
+              <div>
+                <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
+                  MORE INFO
+                </h3>
+                <ul className="space-y-3 text-gray-medium">
+                  <li><Link href="/about" className="hover:text-orange-primary transition-colors">About Us</Link></li>
+                  <li><Link href="/learn/faq" className="hover:text-orange-primary transition-colors">FAQs</Link></li>
+                  <li><Link href="/blog" className="hover:text-orange-primary transition-colors">Blog</Link></li>
+                  <li><Link href="/careers" className="hover:text-orange-primary transition-colors">Careers</Link></li>
+                  <li><Link href="/patents" className="hover:text-orange-primary transition-colors">Patents</Link></li>
+                  <li><Link href="/press" className="hover:text-orange-primary transition-colors">Press</Link></li>
+                </ul>
+              </div>
+              
+              {/* Reach Out Column */}
+              <div>
+                <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
+                  REACH OUT
+                </h3>
+                <ul className="space-y-3 text-gray-medium">
+                  <li><Link href="/contact" className="hover:text-orange-primary transition-colors">Contact Us</Link></li>
+                  <li><Link href="/registered-dietitian" className="hover:text-orange-primary transition-colors">Registered Dietitian Program</Link></li>
+                  <li><Link href="/kale-creator" className="hover:text-orange-primary transition-colors">Kale Creator Program</Link></li>
+                  <li><Link href="/community" className="hover:text-orange-primary transition-colors">Customer Community</Link></li>
+                </ul>
+              </div>
+              
+              {/* Resources Column */}
+              <div>
+                <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
+                  RESOURCES
+                </h3>
+                <ul className="space-y-3 text-gray-medium">
+                  <li><Link href="/terms" className="hover:text-orange-primary transition-colors">Terms of Service</Link></li>
+                  <li><Link href="/privacy" className="hover:text-orange-primary transition-colors">Privacy Policy</Link></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
