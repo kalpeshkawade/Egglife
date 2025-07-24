@@ -59,19 +59,12 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
         minHeight: '60vh'
       }}
     >
-      <div className="flex justify-center items-end relative overflow-visible min-h-[50vh] py-8">
+      <div className="flex justify-center items-center relative overflow-visible min-h-[50vh] py-8">
       
       {/* Single Product Display */}
       <div className="relative w-full mx-auto z-10">
-        {/* Very small white semicircle background from bottom matching original website */}
-        <div className="relative h-[400px] flex items-end justify-center mb-8">
-          <div 
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-[30vh] bg-white shadow-xl transition-all duration-1000 ease-in-out"
-            style={{
-              clipPath: 'ellipse(50% 100% at 50% 100%)',
-              boxShadow: `0 -15px 40px ${currentColors.primary}10, 0 0 80px ${currentColors.background}15`
-            }}
-          />
+        {/* Product container */}
+        <div className="relative h-[400px] flex items-center justify-center">
           
           <div 
             key={`${currentProduct.id}-${currentIndex}`}
@@ -99,8 +92,16 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
           </div>
         </div>
 
-
       </div>
+      
+      {/* White semicircle at bottom of section - matching original website */}
+      <div 
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[100vw] h-[20vh] bg-white shadow-xl transition-all duration-1000 ease-in-out z-0"
+        style={{
+          clipPath: 'ellipse(50% 100% at 50% 100%)',
+          boxShadow: `0 -15px 40px ${currentColors.primary}10, 0 0 80px ${currentColors.background}15`
+        }}
+      />
       </div>
     </div>
   );
