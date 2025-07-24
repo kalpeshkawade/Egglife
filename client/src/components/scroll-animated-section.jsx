@@ -65,13 +65,13 @@ export default function ScrollAnimatedSection() {
         
         {/* Content positioned over the image */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-4">
+          <div className="text-center text-white px-4 max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
               Meet your goals one macro at a time
             </h2>
             
             <Link href="/learn/our-wraps">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-12">
                 <span className="relative z-10 flex">
                   {['S', 'e', 'e', ' ', 'h', 'o', 'w', ' ', 'w', 'e', ' ', 's', 't', 'a', 'c', 'k', ' ', 'u', 'p'].map((letter, index) => (
                     <span
@@ -92,52 +92,50 @@ export default function ScrollAnimatedSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
               </button>
             </Link>
+
+            {/* Nutrition stats positioned directly below button */}
+            <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2">
+                  &lt;3g
+                </div>
+                <div className="text-lg md:text-xl font-bold text-white uppercase tracking-wider mb-1">
+                  CARBS
+                </div>
+                <div className="text-sm md:text-base text-white/80">
+                  per serving
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2">
+                  11g+
+                </div>
+                <div className="text-lg md:text-xl font-bold text-white uppercase tracking-wider mb-1">
+                  PROTEIN
+                </div>
+                <div className="text-sm md:text-base text-white/80">
+                  per serving
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2">
+                  &lt;70
+                </div>
+                <div className="text-lg md:text-xl font-bold text-white uppercase tracking-wider mb-1">
+                  CALORIES
+                </div>
+                <div className="text-sm md:text-base text-white/80">
+                  per serving
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
-      {/* Nutrition stats section below the image */}
-      <div className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-orange-primary mb-4">
-                &lt;3g
-              </div>
-              <div className="text-xl md:text-2xl font-bold text-gray-dark uppercase tracking-wider mb-2">
-                CARBS
-              </div>
-              <div className="text-base md:text-lg text-gray-medium">
-                per serving
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-green-accent mb-4">
-                11g+
-              </div>
-              <div className="text-xl md:text-2xl font-bold text-gray-dark uppercase tracking-wider mb-2">
-                PROTEIN
-              </div>
-              <div className="text-base md:text-lg text-gray-medium">
-                per serving
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-blue-500 mb-4">
-                &lt;70
-              </div>
-              <div className="text-xl md:text-2xl font-bold text-gray-dark uppercase tracking-wider mb-2">
-                CALORIES
-              </div>
-              <div className="text-base md:text-lg text-gray-medium">
-                per serving
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </section>
   );
 }
