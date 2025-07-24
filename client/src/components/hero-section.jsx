@@ -59,51 +59,57 @@ export default function HeroSection() {
       className="relative overflow-hidden transition-all duration-1000 ease-in-out"
       style={{ backgroundColor: currentColors.background }}
     >
-      <div className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <div className="space-y-4 mb-8">
-              <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark">
-                The Perfect Wrap<sup className="text-lg">®</sup>
-              </h1>
-              <div className="text-3xl lg:text-5xl xl:text-6xl font-bold text-gray-dark flex flex-wrap items-center justify-center gap-x-4">
-                <span>for</span>
-                <span 
-                  key={currentTextIndex}
-                  className={`${benefitTexts[currentTextIndex].color} animate-text-fade-in`}
-                >
-                  {benefitTexts[currentTextIndex].text}
-                </span>
+      {/* Upper section with same background color as product animation for seamless transition */}
+      <div 
+        className="relative transition-all duration-1000 ease-in-out"
+        style={{ backgroundColor: currentColors.background }}
+      >
+        <div className="py-16 lg:py-24">
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-12">
+              <div className="space-y-4 mb-8">
+                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark">
+                  The Perfect Wrap<sup className="text-lg">®</sup>
+                </h1>
+                <div className="text-3xl lg:text-5xl xl:text-6xl font-bold text-gray-dark flex flex-wrap items-center justify-center gap-x-4">
+                  <span>for</span>
+                  <span 
+                    key={currentTextIndex}
+                    className={`${benefitTexts[currentTextIndex].color} animate-text-fade-in`}
+                  >
+                    {benefitTexts[currentTextIndex].text}
+                  </span>
+                </div>
               </div>
+              <p className="text-xl lg:text-2xl text-gray-medium mb-10">Wraps made with egg whites, not flour.</p>
+              <Link href="/where-to-buy">
+                <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                  <span className="relative z-10 flex">
+                    {['F', 'i', 'n', 'd', ' ', 'w', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'b', 'u', 'y'].map((letter, index) => (
+                      <span
+                        key={index}
+                        className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
+                        style={{ 
+                          animationDelay: `${index * 0.05}s`,
+                          animationDuration: '1.2s',
+                          animationIterationCount: 'infinite'
+                        }}
+                      >
+                        {letter === ' ' ? '\u00A0' : letter}
+                      </span>
+                    ))}
+                  </span>
+                  
+                  {/* Button shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
+                </button>
+              </Link>
             </div>
-            <p className="text-xl lg:text-2xl text-gray-medium mb-10">Wraps made with egg whites, not flour.</p>
-            <Link href="/where-to-buy">
-              <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
-                <span className="relative z-10 flex">
-                  {['F', 'i', 'n', 'd', ' ', 'w', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'b', 'u', 'y'].map((letter, index) => (
-                    <span
-                      key={index}
-                      className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
-                      style={{ 
-                        animationDelay: `${index * 0.05}s`,
-                        animationDuration: '1.2s',
-                        animationIterationCount: 'infinite'
-                      }}
-                    >
-                      {letter === ' ' ? '\u00A0' : letter}
-                    </span>
-                  ))}
-                </span>
-                
-                {/* Button shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
-              </button>
-            </Link>
           </div>
         </div>
-        
-        <AnimatedProductDisplay currentProductIndex={currentProductIndex} />
       </div>
+        
+      <AnimatedProductDisplay currentProductIndex={currentProductIndex} />
       
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-orange-200 rounded-full opacity-20 animate-bounce"></div>
