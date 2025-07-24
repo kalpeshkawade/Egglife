@@ -70,12 +70,12 @@ export default function ProductShowcase() {
       <div className="container mx-auto px-4">
         {/* Header Section - Matching exact EggLife styling */}
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight tracking-tight">
-            <span className="block text-gray-900">Simple.</span>
-            <span className="block text-gray-900">Delicious.</span>
-            <span className="block text-gray-900">Nutrition.</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
+            <span className="block" style={{ color: '#521FCC' }}>Simple.</span>
+            <span className="block" style={{ color: '#ec4899' }}>Delicious.</span>
+            <span className="block" style={{ color: '#521FCC' }}>Nutrition.</span>
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-600 font-light max-w-5xl mx-auto leading-relaxed mt-12">
+          <p className="text-2xl md:text-3xl font-light max-w-5xl mx-auto leading-relaxed mt-12" style={{ color: '#521FCC' }}>
             A versatile, protein-powered way to reimagine your favorite meals.
           </p>
         </div>

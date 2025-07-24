@@ -68,8 +68,8 @@ export default function HeroSection() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-6">
               <div className="space-y-4 mb-8">
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark">
-                  The Perfect Wrap<sup className="text-lg">®</sup>
+                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark relative">
+                  <span style={{ mixBlendMode: 'multiply' }}>The Perfect Wrap<sup className="text-lg">®</sup></span>
                 </h1>
                 <div className="text-3xl lg:text-5xl xl:text-6xl font-bold text-gray-dark flex flex-wrap items-center justify-center gap-x-4">
                   <span>for</span>
@@ -81,7 +81,7 @@ export default function HeroSection() {
                   </span>
                 </div>
               </div>
-              <p className="text-xl lg:text-2xl text-gray-medium mb-10">Wraps made with egg whites, not flour.</p>
+              <p className="text-xl lg:text-2xl text-gray-medium mb-10 relative" style={{ mixBlendMode: 'multiply' }}>Wraps made with egg whites, not flour.</p>
               <Link href="/where-to-buy">
                 <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                   <span className="relative z-10 flex">
