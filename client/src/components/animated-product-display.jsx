@@ -56,20 +56,20 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       style={{
         backgroundColor: currentColors.background,
         marginLeft: 'calc(-50vw + 50%)',
-        minHeight: '60vh'
+        minHeight: '65vh'
       }}
     >
-      <div className="flex justify-center items-end relative overflow-hidden min-h-[60vh]">
+      <div className="flex justify-center items-end relative overflow-hidden min-h-[65vh]">
       
       {/* Single Product Display */}
       <div className="relative w-full mx-auto z-10">
-        {/* Small white semicircle background from bottom matching original website */}
-        <div className="relative h-[400px] flex items-end justify-center">
+        {/* Very small white semicircle background from bottom matching original website */}
+        <div className="relative h-[450px] flex items-end justify-center">
           <div 
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[100vw] h-[40vh] bg-white shadow-xl transition-all duration-1000 ease-in-out"
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-[30vh] bg-white shadow-xl transition-all duration-1000 ease-in-out"
             style={{
               clipPath: 'ellipse(50% 100% at 50% 100%)',
-              boxShadow: `0 -20px 60px ${currentColors.primary}10, 0 0 100px ${currentColors.background}15`
+              boxShadow: `0 -15px 40px ${currentColors.primary}10, 0 0 80px ${currentColors.background}15`
             }}
           />
           
@@ -81,29 +81,29 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
                 : "opacity-100 transform scale-100 translate-y-0 animate-product-reveal"
             }`}
           >
-            {/* Product image positioned so half is outside semicircle, half inside */}
+            {/* Larger product image positioned so half overflows outside semicircle */}
             <div className="relative animate-float">
               <div className="flex items-end justify-center relative">
                 <img 
                   src={currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
-                  className="w-72 h-80 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
+                  className="w-96 h-[26rem] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
                   style={{ 
-                    transform: 'translateY(20px)' // Position so half is in semicircle, half outside
+                    transform: 'translateY(40px)' // Position so significant portion overflows outside small semicircle
                   }}
                 />
               </div>
             </div>
 
-            {/* Product name and description positioned below image on semicircle */}
-            <div className="text-center absolute bottom-16 left-1/2 transform -translate-x-1/2 z-30">
+            {/* Product name and description positioned below image on small semicircle */}
+            <div className="text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30">
               <h3 
-                className="text-2xl font-bold mb-2 animate-text-fade-in transition-colors duration-700"
+                className="text-3xl font-bold mb-3 animate-text-fade-in transition-colors duration-700"
                 style={{ color: currentColors.primary }}
               >
                 {currentProduct.name}
               </h3>
-              <p className="text-gray-medium text-sm leading-relaxed animate-text-fade-in delay-100 max-w-xs mx-auto">
+              <p className="text-gray-medium text-base leading-relaxed animate-text-fade-in delay-100 max-w-md mx-auto">
                 {currentProduct.description}
               </p>
             </div>
