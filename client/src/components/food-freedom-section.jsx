@@ -148,7 +148,7 @@ export default function FoodFreedomSection() {
                 <img 
                   src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe89d5_Stickers-mobile.svg"
                   alt="collection of dietary stickers" 
-                  className="w-40 md:w-48 lg:w-56 xl:w-64 h-auto transform hover:scale-105 transition-transform duration-300"
+                  className="w-56 md:w-64 lg:w-72 xl:w-80 h-auto transform hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     e.target.src = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=200";
                   }}
