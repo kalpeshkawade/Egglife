@@ -1,69 +1,85 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
+import { productColors } from "../data/products.js";
 
 export default function ProductShowcase() {
-  const products = [
-    {
-      id: 1,
-      name: "original",
-      slug: "original",
-      description: "A soft, light, and clean canvas.",
-      color: "#E8B4A6", // Matching the original wrap color
-      textColor: "text-[#E8B4A6]",
-      imageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67e17e6ef78f84f6fb1b73ad_egglife-original-wrap-front.webp",
-      hoverImageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe8c0d_wrap-01.webp"
-    },
-    {
-      id: 2,
-      name: "roasted garlic & herb",
-      slug: "roasted-garlic-herb", 
-      description: "A flavorful combination of roasted garlic and chives with a refreshing blend of basil, parsley, and rosemary.",
-      color: "#7CAA6D", // Green color matching the herb wrap
-      textColor: "text-[#7CAA6D]",
-      imageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67e17d45f3f5d43d2fbccf96_egglife-roasted-garlic-herb-wrap-front.webp",
-      hoverImageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe944a_rgh-wrap-hover_v2.webp"
-    },
-    {
-      id: 3,
-      name: "everything bagel",
-      slug: "everything-bagel",
-      description: "A mouth-watering mixture of garlic, onion, poppy seed, hemp seed, and sea salt.",
-      color: "#D4A574", // Tan/brown color matching everything bagel
-      textColor: "text-[#D4A574]",
-      imageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67e17e0cf1c15b8775a11ca9_egglife-everything-wrap-front.webp",
-      hoverImageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe9449_ec-wrap-hover_v2.webp"
-    },
-    {
-      id: 4,
-      name: "sweet cinnamon",
-      slug: "sweet-cinnamon",
-      description: "A sweet sprinkle of cinnamon and vanilla, naturally sweetened with monk fruit.",
-      color: "#C67B47", // Cinnamon brown color
-      textColor: "text-[#C67B47]",
-      imageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67e17d2ca9260403af628532_egglife-cinnamon-wrap-front.webp",
-      hoverImageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe8c0b_wrap-05.webp"
-    },
-    {
-      id: 5,
-      name: "garden salsa",
-      slug: "garden-salsa",
-      description: "A zesty mix of just-picked flavors including peppers, onion, and garlic.",
-      color: "#E74C3C", // Red color matching salsa
-      textColor: "text-[#E74C3C]",
-      imageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67e17d1e43bad76657f1fed9_egglife-garden-salsa-wrap-front.webp",
-      hoverImageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe93ba_garden-salsa-wrap.webp"
-    },
-    {
-      id: 6,
-      name: "southwest",
-      slug: "southwest",
-      description: "A flavorful blend of cumin, garlic, onion, and peppers.",
-      color: "#F39C12", // Orange/yellow color matching southwest
-      textColor: "text-[#F39C12]",
-      imageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67e17d69c67c308cb11d1369_egglife-southwest-wrap-front.webp",
-      hoverImageUrl: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe8c07_wrap-03.webp"
-    }
-  ];
+  const { data: allProducts = [], isLoading } = useQuery({
+    queryKey: ["/api/products"],
+  });
+
+  // Map product slugs to color keys
+  const slugToColorMap = {
+    'original-wrap': 'original',
+    'southwest-wrap': 'southwest', 
+    'everything-bagel-wrap': 'everything-bagel',
+    'roasted-garlic-herb-wrap': 'roasted-garlic-herb',
+    'sweet-cinnamon-wrap': 'sweet-cinnamon',
+    'garden-salsa-wrap': 'garden-salsa'
+  };
+
+  // Transform database products to showcase format with colors
+  const wrapProducts = allProducts
+    .filter(product => product.category === "wrap" && slugToColorMap[product.slug])
+    .map(product => {
+      const colorKey = slugToColorMap[product.slug];
+      const colors = productColors[colorKey] || productColors.original;
+      return {
+        id: product.id,
+        name: product.flavor,
+        slug: product.slug,
+        description: product.description,
+        color: colors.primary,
+        textColor: `text-[${colors.primary}]`,
+        imageUrl: product.imageUrl,
+        hoverImageUrl: product.hoverImageUrl
+      };
+    });
+
+  // Add Grab & Go products at the end
+  const grabGoProducts = allProducts
+    .filter(product => product.category === "grab-and-go")
+    .map(product => {
+      const colorKey = slugToColorMap[product.slug] || 'original';
+      const colors = productColors[colorKey] || productColors.original;
+      return {
+        id: product.id,
+        name: `GRAB & GO ${product.flavor}`,
+        slug: product.slug,
+        description: product.description,
+        color: colors.primary,
+        textColor: `text-[${colors.primary}]`,
+        imageUrl: product.imageUrl,
+        hoverImageUrl: product.hoverImageUrl
+      };
+    });
+
+  const allShowcaseProducts = [...wrapProducts, ...grabGoProducts];
+
+  if (isLoading) {
+    return (
+      <section className="py-20" style={{ backgroundColor: '#EAE5FA' }}>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-8">
+              <span className="block" style={{ color: '#521FCC' }}>Simple.</span>
+              <span className="block" style={{ color: '#ec4899' }}>Delicious.</span>
+              <span className="block" style={{ color: '#521FCC' }}>Nutrition.</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 animate-pulse">
+                <div className="h-48 bg-gray-200 rounded-xl mb-4"></div>
+                <div className="h-6 bg-gray-200 rounded mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20" style={{ backgroundColor: '#EAE5FA' }}>
@@ -82,7 +98,7 @@ export default function ProductShowcase() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+          {allShowcaseProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
@@ -103,15 +119,13 @@ function ProductCard({ product }) {
       >
         {/* Image Container with Oval Hover Effect */}
         <div className="relative h-80 overflow-hidden">
-          {/* Regular Product Image */}
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-              isHovered ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
-            }`}
+          {/* Main Product Image */}
+          <img 
+            src={product.imageUrl} 
+            alt={product.name} 
+            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
           />
-          
+
           {/* Oval Egg-shaped Hover Image */}
           <div
             className={`absolute inset-0 ${
