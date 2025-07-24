@@ -42,14 +42,14 @@ export default function Footer() {
               
               {/* EggLife Logo */}
               <div className="mt-8">
-                <div className="h-12 flex items-center">
-                  {/* EggLife Text Logo */}
-                  <div className="text-2xl font-bold text-orange-primary">
-                    <span style={{ color: '#FF6B35' }}>Egg</span>
-                    <span style={{ color: '#4A90E2' }}>Life</span>
-                    <span className="text-gray-600 text-lg ml-1">Foods</span>
+                <Link href="/" className="flex items-center space-x-3 group">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-primary to-orange-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                    <span className="text-white font-bold text-lg">E</span>
                   </div>
-                </div>
+                  <span className="text-2xl font-bold text-gray-dark tracking-wide">
+                    Egg<span className="text-orange-primary">Life</span>
+                  </span>
+                </Link>
               </div>
             </div>
 
