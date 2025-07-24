@@ -14,7 +14,6 @@ export default function PerfectProteinSection() {
         {/* Light overlay for better text readability */}
         <div className="absolute inset-0 bg-white/40" />
       </div>
-
       <div className="container mx-auto px-4 relative z-10 min-h-[70vh] flex flex-col justify-between">
         {/* Title at top left */}
         <div className="flex justify-start">
@@ -26,7 +25,7 @@ export default function PerfectProteinSection() {
         {/* Description and button at bottom right */}
         <div className="flex justify-end">
           <div className="max-w-lg text-right space-y-6">
-            <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-dark leading-relaxed font-medium">
+            <p className="md:text-2xl lg:text-3xl xl:text-4xl text-gray-dark font-medium text-[22px]">
               Heart-healthy and packed with necessary nutrients, egg whites are the ultimate protein for every body.
             </p>
             
