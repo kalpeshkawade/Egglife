@@ -104,22 +104,22 @@ export const productColors = {
     secondary: '#F87402',
     background: '#F87402'
   },
-  everythingBagel: {
+  "everything-bagel": {
     primary: '#00A3D8',
     secondary: '#00A3D8',
     background: '#00A3D8'
   },
-  roastedGarlicHerb: {
+  "roasted-garlic-herb": {
     primary: '#9FCB30',
     secondary: '#9FCB30',
     background: '#9FCB30'
   },
-  sweetCinnamon: {
+  "sweet-cinnamon": {
     primary: '#FFCC12',
     secondary: '#FFCC12',
     background: '#FFCC12'
   },
-  gardenSalsa: {
+  "garden-salsa": {
     primary: '#AF2650',
     secondary: '#AF2650',
     background: '#AF2650'
