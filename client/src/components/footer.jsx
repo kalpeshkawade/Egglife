@@ -11,10 +11,10 @@ export default function Footer() {
           
             {/* Left Side - Community Section */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-dark mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" style={{ color: '#521FCC' }}>
                 JOIN OUR COMMUNITY
               </h2>
-              <p className="text-xl text-gray-medium mb-8 leading-relaxed">
+              <p className="text-xl mb-8 leading-relaxed" style={{ color: '#521FCC' }}>
                 Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
               </p>
               <Link href="/newsletter">
@@ -57,10 +57,10 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* More Info Column */}
               <div>
-                <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
+                <h3 className="font-bold text-lg mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
                   MORE INFO
                 </h3>
-                <ul className="space-y-3 text-gray-medium">
+                <ul className="space-y-3" style={{ color: '#521FCC' }}>
                   <li><Link href="/about" className="hover:text-orange-primary transition-colors">About Us</Link></li>
                   <li><Link href="/learn/faq" className="hover:text-orange-primary transition-colors">FAQs</Link></li>
                   <li><Link href="/blog" className="hover:text-orange-primary transition-colors">Blog</Link></li>
@@ -72,10 +72,10 @@ export default function Footer() {
               
               {/* Reach Out Column */}
               <div>
-                <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
+                <h3 className="font-bold text-lg mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
                   REACH OUT
                 </h3>
-                <ul className="space-y-3 text-gray-medium">
+                <ul className="space-y-3" style={{ color: '#521FCC' }}>
                   <li><Link href="/contact" className="hover:text-orange-primary transition-colors">Contact Us</Link></li>
                   <li><Link href="/registered-dietitian" className="hover:text-orange-primary transition-colors">Registered Dietitian Program</Link></li>
                   <li><Link href="/kale-creator" className="hover:text-orange-primary transition-colors">Kale Creator Program</Link></li>
@@ -85,10 +85,10 @@ export default function Footer() {
               
               {/* Resources Column */}
               <div>
-                <h3 className="font-bold text-gray-dark text-lg mb-6 uppercase tracking-wider">
+                <h3 className="font-bold text-lg mb-6 uppercase tracking-wider" style={{ color: '#521FCC' }}>
                   RESOURCES
                 </h3>
-                <ul className="space-y-3 text-gray-medium">
+                <ul className="space-y-3" style={{ color: '#521FCC' }}>
                   <li><Link href="/terms" className="hover:text-orange-primary transition-colors">Terms of Service</Link></li>
                   <li><Link href="/privacy" className="hover:text-orange-primary transition-colors">Privacy Policy</Link></li>
                 </ul>

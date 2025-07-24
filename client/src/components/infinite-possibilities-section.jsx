@@ -171,11 +171,11 @@ export default function InfinitePossibilitiesSection() {
             isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-dark leading-tight tracking-tight">
-            Six flavors. Infinite possibilities.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
+            Six <span style={{ color: '#ec4899' }}>flavors</span>. <span style={{ color: '#521FCC' }}>Infinite possibilities.</span>
           </h2>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-medium leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto font-normal" style={{ color: '#521FCC' }}>
             Over 150 ways to reimagine every meal.
           </p>
           

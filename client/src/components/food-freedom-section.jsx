@@ -62,7 +62,7 @@ export default function FoodFreedomSection() {
             }`}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
-              We stand for<br />food‍ freedom
+              We stand for<br />food‍ <span style={{ color: '#ec4899' }}>freedom</span>
             </h2>
             
             <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed font-normal">

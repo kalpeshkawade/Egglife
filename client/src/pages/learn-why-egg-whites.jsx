@@ -106,7 +106,7 @@ export default function LearnWhyEggWhites() {
                 
                 <div>
                   <img 
-                    src="https://images.unsplash.com/photo-1569288052389-ddc8e049ed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                    src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8943_hm-protein%20.webp" 
                     alt="Fresh eggs showcasing natural protein source"
                     className="rounded-xl w-full shadow-lg"
                   />
