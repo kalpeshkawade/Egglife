@@ -60,11 +60,11 @@ export default function FoodFreedomSection() {
               isVisible ? 'animate-fade-in' : 'opacity-0 translate-x-10'
             }`}
           >
-            <h2 className="text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-dark leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-dark leading-tight tracking-tight">
               We stand for food‍ freedom
             </h2>
             
-            <p className="text-2xl lg:text-3xl xl:text-4xl text-gray-medium leading-relaxed font-light">
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-medium leading-relaxed font-normal">
               Taste and nutrition are not mutually exclusive. Enjoy the foods you love and flavors you crave, regardless of dietary lifestyle.
             </p>
             
@@ -76,7 +76,7 @@ export default function FoodFreedomSection() {
               style={{ animationDelay: '0.2s' }}
             >
               <Link href="/learn/why-we-do-it">
-                <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                   <span className="relative z-10 flex">
                     {['W', 'h', 'y', ' ', 'w', 'e', ' ', 'd', 'o', ' ', 'i', 't'].map((letter, index) => (
                       <span
