@@ -1,4 +1,6 @@
-import { products, recipes, newsletters, type Product, type Recipe, type Newsletter, type InsertProduct, type InsertRecipe, type InsertNewsletter } from "@shared/schema";
+import { products, recipes, newsletters, users, type Product, type Recipe, type Newsletter, type User, type InsertProduct, type InsertRecipe, type InsertNewsletter, type UpsertUser } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   // Products
@@ -16,6 +18,10 @@ export interface IStorage {
   // Newsletter
   subscribeToNewsletter(newsletter: InsertNewsletter): Promise<Newsletter>;
   getNewsletterSubscriptions(): Promise<Newsletter[]>;
+  
+  // User operations (IMPORTANT) these user operations are mandatory for Replit Auth.
+  getUser(id: string): Promise<User | undefined>;
+  upsertUser(user: UpsertUser): Promise<User>;
 }
 
 export class MemStorage implements IStorage {
@@ -466,6 +472,97 @@ export class MemStorage implements IStorage {
   async getNewsletterSubscriptions(): Promise<Newsletter[]> {
     return Array.from(this.newsletters.values());
   }
+  
+  // User operations (IMPORTANT) these user operations are mandatory for Replit Auth.
+  async getUser(id: string): Promise<User | undefined> {
+    // In memory storage doesn't support auth - would need database
+    return undefined;
+  }
+
+  async upsertUser(userData: UpsertUser): Promise<User> {
+    // In memory storage doesn't support auth - would need database
+    throw new Error("User operations require database storage");
+  }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  // User operations (IMPORTANT) these user operations are mandatory for Replit Auth.
+  async getUser(id: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user;
+  }
+
+  async upsertUser(userData: UpsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(userData)
+      .onConflictDoUpdate({
+        target: users.id,
+        set: {
+          ...userData,
+          updatedAt: new Date(),
+        },
+      })
+      .returning();
+    return user;
+  }
+
+  // Products
+  async getProducts(): Promise<Product[]> {
+    return await db.select().from(products).where(eq(products.isAvailable, true));
+  }
+
+  async getProductById(id: number): Promise<Product | undefined> {
+    const [product] = await db.select().from(products).where(eq(products.id, id));
+    return product;
+  }
+
+  async getProductBySlug(slug: string): Promise<Product | undefined> {
+    const [product] = await db.select().from(products).where(eq(products.slug, slug));
+    return product;
+  }
+
+  async createProduct(product: InsertProduct): Promise<Product> {
+    const [newProduct] = await db.insert(products).values(product).returning();
+    return newProduct;
+  }
+
+  // Recipes
+  async getRecipes(mealType?: string): Promise<Recipe[]> {
+    if (mealType) {
+      return await db.select().from(recipes).where(eq(recipes.mealType, mealType));
+    }
+    return await db.select().from(recipes);
+  }
+
+  async getRecipeById(id: number): Promise<Recipe | undefined> {
+    const [recipe] = await db.select().from(recipes).where(eq(recipes.id, id));
+    return recipe;
+  }
+
+  async getRecipeBySlug(slug: string): Promise<Recipe | undefined> {
+    const [recipe] = await db.select().from(recipes).where(eq(recipes.slug, slug));
+    return recipe;
+  }
+
+  async createRecipe(recipe: InsertRecipe): Promise<Recipe> {
+    const [newRecipe] = await db.insert(recipes).values(recipe).returning();
+    return newRecipe;
+  }
+
+  // Newsletter
+  async subscribeToNewsletter(newsletter: InsertNewsletter): Promise<Newsletter> {
+    const [newSubscription] = await db.insert(newsletters).values({
+      ...newsletter,
+      subscribedAt: new Date().toISOString(),
+    }).returning();
+    return newSubscription;
+  }
+
+  async getNewsletterSubscriptions(): Promise<Newsletter[]> {
+    return await db.select().from(newsletters);
+  }
+}
+
+// Use DatabaseStorage for authentication support
+export const storage = new DatabaseStorage();

@@ -17,23 +17,33 @@ import LearnFAQ from "@/pages/learn-faq";
 import LearnWhyWeDoIt from "@/pages/learn-why-we-do-it";
 import ContactUs from "@/pages/contact-us";
 import AboutUs from "@/pages/about-us";
+import Landing from "@/pages/landing";
+import { useAuth } from "@/hooks/useAuth";
 
 function Router() {
+  const { isAuthenticated, isLoading } = useAuth();
+
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/recipes-hub" component={RecipesHub} />
-      <Route path="/recipes/:slug" component={RecipeDetail} />
-      <Route path="/products" component={Products} />
-      <Route path="/product/:slug" component={ProductDetail} />
-      <Route path="/where-to-buy" component={WhereToBuy} />
-      <Route path="/learn" component={Learn} />
-      <Route path="/learn/our-wraps" component={LearnOurWraps} />
-      <Route path="/learn/why-egg-whites" component={LearnWhyEggWhites} />
-      <Route path="/learn/faq" component={LearnFAQ} />
-      <Route path="/learn/why-we-do-it" component={LearnWhyWeDoIt} />
-      <Route path="/contact-us" component={ContactUs} />
-      <Route path="/about" component={AboutUs} />
+      {isLoading || !isAuthenticated ? (
+        <Route path="/" component={Landing} />
+      ) : (
+        <>
+          <Route path="/" component={Home} />
+          <Route path="/recipes-hub" component={RecipesHub} />
+          <Route path="/recipes/:slug" component={RecipeDetail} />
+          <Route path="/products" component={Products} />
+          <Route path="/product/:slug" component={ProductDetail} />
+          <Route path="/where-to-buy" component={WhereToBuy} />
+          <Route path="/learn" component={Learn} />
+          <Route path="/learn/our-wraps" component={LearnOurWraps} />
+          <Route path="/learn/why-egg-whites" component={LearnWhyEggWhites} />
+          <Route path="/learn/faq" component={LearnFAQ} />
+          <Route path="/learn/why-we-do-it" component={LearnWhyWeDoIt} />
+          <Route path="/contact-us" component={ContactUs} />
+          <Route path="/about" component={AboutUs} />
+        </>
+      )}
       <Route component={NotFound} />
     </Switch>
   );
