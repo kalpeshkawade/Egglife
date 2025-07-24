@@ -15,6 +15,7 @@ import LearnOurWraps from "@/pages/learn-our-wraps";
 import LearnWhyEggWhites from "@/pages/learn-why-egg-whites";
 import LearnFAQ from "@/pages/learn-faq";
 import LearnWhyWeDoIt from "@/pages/learn-why-we-do-it";
+import ContactUs from "@/pages/contact-us";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/learn/why-egg-whites" component={LearnWhyEggWhites} />
       <Route path="/learn/faq" component={LearnFAQ} />
       <Route path="/learn/why-we-do-it" component={LearnWhyWeDoIt} />
+      <Route path="/contact-us" component={ContactUs} />
       <Route component={NotFound} />
     </Switch>
   );

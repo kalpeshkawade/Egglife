@@ -101,6 +101,13 @@ export default function Header() {
             >
               Where to Buy
             </Link>
+            
+            <Link 
+              href="/contact-us" 
+              className="text-gray-dark font-medium hover:text-orange-primary"
+            >
+              Contact Us
+            </Link>
           </div>
 
           {/* User Actions */}
@@ -153,6 +160,13 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Where to Buy
+              </Link>
+              <Link 
+                href="/contact-us" 
+                className="block py-3 text-gray-dark"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
               </Link>
             </div>
           </div>

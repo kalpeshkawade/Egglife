@@ -81,6 +81,48 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Contact form submission
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const contactSchema = z.object({
+        fullName: z.string().min(1, "Full name is required"),
+        email: z.string().email("Valid email is required"),
+        subject: z.string().min(1, "Subject is required"),
+        message: z.string().min(1, "Message is required"),
+        attachments: z.array(z.any()).optional().default([])
+      });
+
+      const validation = contactSchema.safeParse(req.body);
+      
+      if (!validation.success) {
+        return res.status(400).json({ 
+          message: "Please fill in all required fields",
+          errors: validation.error.errors 
+        });
+      }
+
+      // In a real application, you would:
+      // 1. Store the contact submission in a database
+      // 2. Send email notifications to your support team
+      // 3. Process any file attachments
+      // For now, we'll just log it and return success
+      
+      console.log("Contact form submission:", validation.data);
+      
+      res.json({ 
+        message: "Message sent successfully! We'll get back to you soon.",
+        data: { 
+          id: Date.now().toString(),
+          submitted: new Date().toISOString(),
+          ...validation.data 
+        }
+      });
+    } catch (error) {
+      console.error("Contact form error:", error);
+      res.status(500).json({ message: "Failed to send message. Please try again later." });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
