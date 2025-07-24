@@ -10,8 +10,10 @@ export default function AnimatedProductDisplay() {
     queryKey: ["/api/products"],
   });
 
-  // Filter to show only main wrap products (not grab-and-go)
-  const wrapProducts = products.filter(product => product.category === "wrap");
+  // Filter only wrap products that have matching brand colors
+  const wrapProducts = products.filter(product => 
+    product.category === "wrap" && productColors[product.slug]
+  );
 
   // Randomly rotate products with animation
   useEffect(() => {

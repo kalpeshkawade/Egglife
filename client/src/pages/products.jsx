@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { productColors } from "@/data/products.js";
 
 export default function Products() {
   const { data: products = [], isLoading } = useQuery({
@@ -44,7 +45,7 @@ export default function Products() {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {products.map((product) => (
+                {products.filter(product => productColors[product.slug]).map((product) => (
                   <Link key={product.id} href={`/product/${product.slug}`}>
                     <div className="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow cursor-pointer">
                       <div className="relative overflow-hidden">
