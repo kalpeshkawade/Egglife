@@ -17,7 +17,7 @@ export default function PerfectProteinSection() {
       <div className="container mx-auto px-4 relative z-10 min-h-[70vh] flex flex-col justify-between">
         {/* Title at top left */}
         <div className="flex justify-start">
-          <h2 className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-dark leading-tight tracking-tight max-w-lg">
+          <h2 className="md:text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-dark tracking-tight max-w-lg text-[50px]">
             The perfect protein
           </h2>
         </div>
