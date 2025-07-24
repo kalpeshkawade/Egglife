@@ -120,9 +120,9 @@ export const productColors = {
     background: '#FFCC12'
   },
   "garden-salsa": {
-    primary: '#AF2650',
-    secondary: '#AF2650',
-    background: '#AF2650'
+    primary: '#7CC22D',
+    secondary: '#7CC22D',
+    background: '#7CC22D'
   }
 };
 
