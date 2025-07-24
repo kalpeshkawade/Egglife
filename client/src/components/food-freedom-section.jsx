@@ -61,7 +61,7 @@ export default function FoodFreedomSection() {
             }`}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-dark leading-tight tracking-tight">
-              We stand for food‍ freedom
+              We stand for<br />food‍ freedom
             </h2>
             
             <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-medium leading-relaxed font-normal">
