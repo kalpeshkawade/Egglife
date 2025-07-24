@@ -8,6 +8,7 @@ import ScrollAnimatedSection from "@/components/scroll-animated-section";
 import FoodFreedomSection from "@/components/food-freedom-section";
 import InfinitePossibilitiesSection from "@/components/infinite-possibilities-section";
 import NewsletterSignup from "@/components/newsletter-signup";
+import ProductShowcase from "../components/product-showcase";
 
 export default function Home() {
   const { user, isLoading, isAuthenticated } = useAuth();
@@ -82,11 +83,12 @@ export default function Home() {
       </div>
 
       <HeroSection />
-      <PerfectProteinSection />
+      <NewsletterSignup />
+      <ProductShowcase />
       <ScrollAnimatedSection />
+      <PerfectProteinSection />
       <FoodFreedomSection />
       <InfinitePossibilitiesSection />
-      <NewsletterSignup />
       <Footer />
     </div>
   );
