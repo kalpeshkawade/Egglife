@@ -168,11 +168,11 @@ export default function InfinitePossibilitiesSection() {
             isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-5xl lg:text-6xl font-bold text-gray-dark leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-dark leading-tight tracking-tight">
             Six flavors. Infinite possibilities.
           </h2>
           
-          <p className="text-xl lg:text-2xl text-gray-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-medium leading-relaxed max-w-2xl mx-auto font-normal">
             Over 150 ways to reimagine every meal.
           </p>
           
@@ -184,7 +184,7 @@ export default function InfinitePossibilitiesSection() {
             style={{ animationDelay: '0.2s' }}
           >
             <Link href="/recipes-hub">
-              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg overflow-hidden">
+              <button className="group relative bg-orange-primary text-white px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 transform hover:scale-105 hover:shadow-lg overflow-hidden">
                 <span className="relative z-10 flex">
                   {['G', 'e', 't', ' ', 's', 't', 'a', 'r', 't', 'e', 'd'].map((letter, index) => (
                     <span
