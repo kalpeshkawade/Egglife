@@ -64,7 +64,7 @@ export default function HeroSection() {
         className="relative transition-all duration-1000 ease-in-out"
         style={{ backgroundColor: currentColors.background }}
       >
-        <div className="py-16 lg:py-24">
+        <div className="py-12 lg:py-16">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
               <div className="space-y-4 mb-8">

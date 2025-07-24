@@ -56,15 +56,15 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       style={{
         backgroundColor: currentColors.background,
         marginLeft: 'calc(-50vw + 50%)',
-        minHeight: '65vh'
+        minHeight: '50vh'
       }}
     >
-      <div className="flex justify-center items-end relative overflow-hidden min-h-[65vh]">
+      <div className="flex justify-center items-end relative overflow-hidden min-h-[50vh]">
       
       {/* Single Product Display */}
       <div className="relative w-full mx-auto z-10">
         {/* Very small white semicircle background from bottom matching original website */}
-        <div className="relative h-[450px] flex items-end justify-center">
+        <div className="relative h-[350px] flex items-end justify-center">
           <div 
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-[30vh] bg-white shadow-xl transition-all duration-1000 ease-in-out"
             style={{
@@ -95,18 +95,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
               </div>
             </div>
 
-            {/* Product name and description positioned below image on small semicircle */}
-            <div className="text-center absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30">
-              <h3 
-                className="text-3xl font-bold mb-3 animate-text-fade-in transition-colors duration-700"
-                style={{ color: currentColors.primary }}
-              >
-                {currentProduct.name}
-              </h3>
-              <p className="text-gray-medium text-base leading-relaxed animate-text-fade-in delay-100 max-w-md mx-auto">
-                {currentProduct.description}
-              </p>
-            </div>
+
           </div>
         </div>
 
