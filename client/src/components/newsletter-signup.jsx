@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import RollingLogo from "./rolling-logo";
 
 export default function NewsletterSignup() {
   const [scale, setScale] = useState(1);
@@ -105,14 +104,31 @@ export default function NewsletterSignup() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Side - Rolling Logo and Information */}
+            {/* Left Side - Information with EggLife Logo */}
             <div className="text-center lg:text-left">
-              {/* Rolling Logo */}
-              <RollingLogo />
+              {/* Badge with rolling supreme protein text */}
+              <div className="relative inline-block mb-8">
+                <div className="bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full p-6">
+                  <div className="bg-orange-primary rounded-full p-4">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-white">
+                      <path d="M16 2L19.09 8.26L26 9L21 14.74L22.18 21.02L16 17.77L9.82 21.02L11 14.74L6 9L12.91 8.26L16 2Z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute -top-2 -right-2 bg-orange-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                  Premium
+                </div>
+              </div>
 
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                 Join our culinary community
               </h2>
+              
+              <div className="mb-6">
+                <div className="text-orange-300 font-bold text-lg mb-2">
+                  supreme protein - supreme protein
+                </div>
+              </div>
 
               <p className="text-lg text-white/90 leading-relaxed">
                 Stay up to date, discover delicious recipes, and get <span className="font-bold text-orange-300">$2.00 back</span> on your first in-store purchase of egglife egg white wraps
