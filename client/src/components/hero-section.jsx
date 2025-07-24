@@ -29,40 +29,42 @@ export default function HeroSection() {
   }, [benefitTexts.length]);
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-6xl font-bold text-gray-dark mb-6">
-            The Perfect Wrap<sup className="text-sm">®</sup>
-          </h1>
-          <div className="text-xl lg:text-2xl text-gray-medium mb-8 space-y-2">
-            <div>for</div>
-            <div className="h-8 flex items-center justify-center">
-              <span 
-                key={currentTextIndex}
-                className={`font-semibold ${benefitTexts[currentTextIndex].color} animate-text-fade-in`}
-              >
-                {benefitTexts[currentTextIndex].text}
-              </span>
+    <section className="relative overflow-hidden">
+      <div className="py-16 lg:py-24">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-dark mb-6">
+              The Perfect Wrap<sup className="text-sm">®</sup>
+            </h1>
+            <div className="text-xl lg:text-2xl text-gray-medium mb-8 space-y-2">
+              <div>for</div>
+              <div className="h-8 flex items-center justify-center">
+                <span 
+                  key={currentTextIndex}
+                  className={`font-semibold ${benefitTexts[currentTextIndex].color} animate-text-fade-in`}
+                >
+                  {benefitTexts[currentTextIndex].text}
+                </span>
+              </div>
             </div>
+            <p className="text-lg text-gray-medium mb-8">Wraps made with egg whites, not flour.</p>
+            <Link href="/where-to-buy">
+              <button className="relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden group">
+                {/* Original text */}
+                <span className="relative z-10 block transition-all duration-300 group-hover:animate-slide-out-up">
+                  Find where to buy
+                </span>
+                {/* Hover text that slides up */}
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 transform translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:animate-slide-up">
+                  Find where to buy
+                </span>
+                {/* Background slide effect */}
+                <div className="absolute inset-0 bg-orange-600 transform translate-x-full transition-transform duration-300 group-hover:translate-x-0"></div>
+              </button>
+            </Link>
           </div>
-          <p className="text-lg text-gray-medium mb-8">Wraps made with egg whites, not flour.</p>
-          <Link href="/where-to-buy">
-            <button className="relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden group">
-              {/* Original text */}
-              <span className="relative z-10 block transition-all duration-300 group-hover:animate-slide-out-up">
-                Find where to buy
-              </span>
-              {/* Hover text that slides up */}
-              <span className="absolute inset-0 flex items-center justify-center opacity-0 transform translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:animate-slide-up">
-                Find where to buy
-              </span>
-              {/* Background slide effect */}
-              <div className="absolute inset-0 bg-orange-600 transform translate-x-full transition-transform duration-300 group-hover:translate-x-0"></div>
-            </button>
-          </Link>
         </div>
-
+        
         <AnimatedProductDisplay />
       </div>
       

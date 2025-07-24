@@ -94,9 +94,9 @@ export const dietaryBadges = [
 // Product brand colors matching the original website with authentic hex codes
 export const productColors = {
   original: {
-    primary: '#A61456',
-    secondary: '#A61456',
-    background: '#A61456'
+    primary: '#AF2650',
+    secondary: '#AF2650',
+    background: '#AF2650'
   },
   southwest: {
     primary: '#F87402',
@@ -119,9 +119,9 @@ export const productColors = {
     background: '#FFCC12'
   },
   gardenSalsa: {
-    primary: '#AF2650',
-    secondary: '#AF2650',
-    background: '#AF2650'
+    primary: '#7CC22D',
+    secondary: '#7CC22D',
+    background: '#7CC22D'
   }
 };
 

@@ -62,15 +62,15 @@ export default function AnimatedProductDisplay() {
   const currentColors = productColors[currentProduct?.slug] || productColors.original;
 
   return (
-    <div className="flex justify-center items-center relative overflow-hidden min-h-screen">
-      {/* Dynamic background color that extends throughout entire section */}
-      <div 
-        className="absolute inset-0 -top-16 -bottom-16 transition-all duration-1000 ease-in-out"
-        style={{
-          backgroundColor: currentColors.background,
-          background: `linear-gradient(135deg, ${currentColors.background} 0%, ${currentColors.secondary} 100%)`
-        }}
-      />
+    <div 
+      className="relative w-screen transition-all duration-1000 ease-in-out"
+      style={{
+        backgroundColor: currentColors.background,
+        marginLeft: 'calc(-50vw + 50%)',
+        minHeight: '100vh'
+      }}
+    >
+      <div className="flex justify-center items-center relative overflow-hidden min-h-screen">
       
       {/* Single Product Display */}
       <div className="relative max-w-4xl mx-auto z-10">
@@ -155,6 +155,7 @@ export default function AnimatedProductDisplay() {
             </button>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
