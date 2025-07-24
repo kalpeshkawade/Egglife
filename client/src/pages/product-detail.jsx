@@ -129,9 +129,26 @@ export default function ProductDetail() {
                   </div>
 
                   <Link href="/where-to-buy">
-                    <Button className="bg-orange-primary hover:bg-orange-600 text-white px-8 py-3">
-                      Find Where to Buy
-                    </Button>
+                    <button className="group relative bg-orange-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                      <span className="relative z-10 flex">
+                        {['F', 'i', 'n', 'd', ' ', 'W', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'B', 'u', 'y'].map((letter, index) => (
+                          <span
+                            key={index}
+                            className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
+                            style={{ 
+                              animationDelay: `${index * 0.05}s`,
+                              animationDuration: '1.2s',
+                              animationIterationCount: 'infinite'
+                            }}
+                          >
+                            {letter === ' ' ? '\u00A0' : letter}
+                          </span>
+                        ))}
+                      </span>
+                      
+                      {/* Button shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
+                    </button>
                   </Link>
                 </div>
               </div>

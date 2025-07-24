@@ -241,9 +241,30 @@ export default function NewsletterSignup() {
                 <button 
                   type="submit" 
                   disabled={newsletterMutation.isPending}
-                  className="w-full bg-orange-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-orange-600 transition-all duration-300 disabled:opacity-50 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="group relative w-full bg-orange-primary text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 disabled:opacity-50 transform hover:scale-105 shadow-lg hover:shadow-xl overflow-hidden"
                 >
-                  {newsletterMutation.isPending ? "Joining..." : "Join the community"}
+                  <span className="relative z-10 flex justify-center">
+                    {newsletterMutation.isPending ? (
+                      "Joining..."
+                    ) : (
+                      ['J', 'o', 'i', 'n', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'].map((letter, index) => (
+                        <span
+                          key={index}
+                          className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
+                          style={{ 
+                            animationDelay: `${index * 0.05}s`,
+                            animationDuration: '1.2s',
+                            animationIterationCount: 'infinite'
+                          }}
+                        >
+                          {letter === ' ' ? '\u00A0' : letter}
+                        </span>
+                      ))
+                    )}
+                  </span>
+                  
+                  {/* Button shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
                 </button>
               </form>
             </div>
