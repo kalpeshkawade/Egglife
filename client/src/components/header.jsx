@@ -58,7 +58,7 @@ export default function Header() {
                 {
                   title: "Appetizer",
                   href: "/recipes-hub?meal=Appetizer", 
-                  image: "https://images.unsplash.com/photo-1559054663-e9b33cfeec55?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64"
+                  image: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe9416_appetizer.webp"
                 },
                 {
                   title: "Dessert",
@@ -75,7 +75,7 @@ export default function Header() {
                 {
                   title: "Our Wraps",
                   href: "/learn/our-wraps",
-                  image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64"
+                  image: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8aed_a3d41bca5daa1f1fa2d7bdd0c44ce365_dd-learn-v2.webp"
                 },
                 {
                   title: "Why Egg Whites",
@@ -85,7 +85,7 @@ export default function Header() {
                 {
                   title: "FAQs",
                   href: "/learn/faq",
-                  image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64"
+                  image: "https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8a94_dd-learn-img-03.webp"
                 },
                 {
                   title: "Why We Do It",
