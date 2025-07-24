@@ -33,33 +33,41 @@ export default function HeroSection() {
       <div className="py-16 lg:py-24">
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-dark mb-6">
-              The Perfect Wrap<sup className="text-sm">®</sup>
-            </h1>
-            <div className="text-xl lg:text-2xl text-gray-medium mb-8 space-y-2">
-              <div>for</div>
-              <div className="h-8 flex items-center justify-center">
+            <div className="space-y-4 mb-8">
+              <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark">
+                The Perfect Wrap<sup className="text-lg">®</sup>
+              </h1>
+              <div className="text-3xl lg:text-5xl xl:text-6xl font-bold text-gray-dark flex flex-wrap items-center justify-center gap-x-4">
+                <span>for</span>
                 <span 
                   key={currentTextIndex}
-                  className={`font-semibold ${benefitTexts[currentTextIndex].color} animate-text-fade-in`}
+                  className={`${benefitTexts[currentTextIndex].color} animate-text-fade-in`}
                 >
                   {benefitTexts[currentTextIndex].text}
                 </span>
               </div>
             </div>
-            <p className="text-lg text-gray-medium mb-8">Wraps made with egg whites, not flour.</p>
+            <p className="text-xl lg:text-2xl text-gray-medium mb-10">Wraps made with egg whites, not flour.</p>
             <Link href="/where-to-buy">
-              <button className="relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 overflow-hidden group">
-                {/* Original text */}
-                <span className="relative z-10 block transition-all duration-300 group-hover:animate-slide-out-up">
-                  Find where to buy
+              <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
+                <span className="relative z-10 flex">
+                  {['F', 'i', 'n', 'd', ' ', 'w', 'h', 'e', 'r', 'e', ' ', 't', 'o', ' ', 'b', 'u', 'y'].map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
+                      style={{ 
+                        animationDelay: `${index * 0.05}s`,
+                        animationDuration: '1.2s',
+                        animationIterationCount: 'infinite'
+                      }}
+                    >
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </span>
+                  ))}
                 </span>
-                {/* Hover text that slides up */}
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 transform translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-hover:animate-slide-up">
-                  Find where to buy
-                </span>
-                {/* Background slide effect */}
-                <div className="absolute inset-0 bg-orange-600 transform translate-x-full transition-transform duration-300 group-hover:translate-x-0"></div>
+                
+                {/* Button shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
               </button>
             </Link>
           </div>
