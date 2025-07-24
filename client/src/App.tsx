@@ -19,13 +19,24 @@ import ContactUs from "@/pages/contact-us";
 import AboutUs from "@/pages/about-us";
 import Landing from "@/pages/landing";
 import { useAuth } from "@/hooks/useAuth";
+import { useState, useEffect } from "react";
 
 function Router() {
   const { isAuthenticated, isLoading } = useAuth();
+  const [guestMode, setGuestMode] = useState(false);
+
+  // Check if user is in guest mode from localStorage
+  useEffect(() => {
+    const isGuest = localStorage.getItem('egglife_guest_mode') === 'true';
+    setGuestMode(isGuest);
+  }, []);
+
+  // Show landing page only if user is not authenticated AND not in guest mode
+  const showLandingPage = (isLoading || !isAuthenticated) && !guestMode;
 
   return (
     <Switch>
-      {isLoading || !isAuthenticated ? (
+      {showLandingPage ? (
         <Route path="/" component={Landing} />
       ) : (
         <>

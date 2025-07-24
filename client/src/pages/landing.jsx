@@ -131,7 +131,8 @@ export default function Landing() {
                       variant="outline" 
                       className="w-full border-2 border-gray-300 text-gray-700 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:border-orange-primary hover:text-orange-primary"
                       onClick={() => {
-                        // Create a fake user session for guest mode
+                        // Set guest mode in localStorage and redirect to home
+                        localStorage.setItem('egglife_guest_mode', 'true');
                         window.location.href = "/";
                       }}
                     >
