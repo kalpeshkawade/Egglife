@@ -76,7 +76,7 @@ export default function Footer() {
                   REACH OUT
                 </h3>
                 <ul className="space-y-3" style={{ color: '#521FCC' }}>
-                  <li><Link href="/contact" className="hover:text-orange-primary transition-colors">Contact Us</Link></li>
+                  <li><Link href="/contact-us" className="hover:text-orange-primary transition-colors">Contact Us</Link></li>
                   <li><Link href="/registered-dietitian" className="hover:text-orange-primary transition-colors">Registered Dietitian Program</Link></li>
                   <li><Link href="/kale-creator" className="hover:text-orange-primary transition-colors">Kale Creator Program</Link></li>
                   <li><Link href="/community" className="hover:text-orange-primary transition-colors">Customer Community</Link></li>
