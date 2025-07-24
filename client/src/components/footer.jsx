@@ -42,11 +42,14 @@ export default function Footer() {
               
               {/* EggLife Logo */}
               <div className="mt-8">
-                <img 
-                  src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe88c1/67d46f1ca88fba5bdcfe89b1_egglife-logo-full-color.svg" 
-                  alt="EggLife Foods Logo" 
-                  className="h-12 w-auto"
-                />
+                <div className="h-12 flex items-center">
+                  {/* EggLife Text Logo */}
+                  <div className="text-2xl font-bold text-orange-primary">
+                    <span style={{ color: '#FF6B35' }}>Egg</span>
+                    <span style={{ color: '#4A90E2' }}>Life</span>
+                    <span className="text-gray-600 text-lg ml-1">Foods</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -115,26 +118,26 @@ export default function Footer() {
             </div>
             
             {/* Partner/Certification Logos */}
-            <div className="flex space-x-8 items-center">
+            <div className="flex space-x-6 items-center flex-wrap gap-y-4">
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8afc_inc-5000-fastest-growing.webp" 
                 alt="Inc 5000 Fastest Growing" 
-                className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8afd_good-housekeeping-best-snack.webp" 
                 alt="Good Housekeeping Best Snack" 
-                className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8b4f_ic-badge.webp" 
                 alt="Non-GMO Project Verified" 
-                className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67ecdc13019c3ee642488ae3_v1-1a_InsurgentBrandBadges.webp" 
                 alt="Keto Certified" 
-                className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
             </div>
           </div>
