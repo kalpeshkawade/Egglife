@@ -99,39 +99,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
           </div>
         </div>
 
-        {/* Product indicator dots positioned on the white semicircle */}
-        <div className="flex justify-center absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 space-x-2">
-          {wrapProducts.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (index !== currentIndex) {
-                  setIsAnimating(true);
-                  setTimeout(() => {
-                    setCurrentIndex(index);
-                    setIsAnimating(false);
-                  }, 400);
-                }
-              }}
-              className={`transition-all duration-500 rounded-full ${
-                index === currentIndex 
-                  ? "w-8 h-4 shadow-lg" 
-                  : "w-4 h-4 bg-gray-300 hover:bg-gray-400 hover:scale-110"
-              }`}
-              style={index === currentIndex ? {
-                backgroundColor: currentColors.primary,
-                boxShadow: `0 4px 12px ${currentColors.primary}40`
-              } : {}}
-            >
-              {index === currentIndex && (
-                <div 
-                  className="w-full h-full rounded-full animate-pulse"
-                  style={{ backgroundColor: `${currentColors.primary}50` }}
-                />
-              )}
-            </button>
-          ))}
-        </div>
+
       </div>
       </div>
     </div>
