@@ -4,13 +4,15 @@ import { Link } from "wouter";
 // Recipe Card Component with dynamic border colors
 function RecipeCard({ recipe }) {
   return (
-    <div className="flex-none w-80 mx-3">
+    <div className="flex-none w-80 mx-3 my-2">
       <Link href={`/recipes/${recipe.slug}`}>
         <div className="group cursor-pointer">
           <div 
             className="bg-white rounded-xl border-2 border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 overflow-hidden recipe-card"
             style={{
-              '--hover-border-color': getBorderColor(recipe.borderColor)
+              '--hover-border-color': getBorderColor(recipe.borderColor),
+              marginTop: '4px',
+              marginBottom: '4px'
             }}
           >
             <div className="relative overflow-hidden">
@@ -209,9 +211,9 @@ export default function InfinitePossibilitiesSection() {
         </div>
 
         {/* Continuous moving carousel */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden py-4">
           {/* First row - moves left to right */}
-          <div className="flex animate-scroll-right mb-6">
+          <div className="flex animate-scroll-right mb-6" style={{ paddingTop: '8px', paddingBottom: '8px' }}>
             {/* Duplicate recipes for seamless loop */}
             {[...recipes, ...recipes].map((recipe, index) => (
               <RecipeCard key={`${recipe.id}-${index}`} recipe={recipe} />
@@ -219,7 +221,7 @@ export default function InfinitePossibilitiesSection() {
           </div>
 
           {/* Second row - moves right to left (reverse) */}
-          <div className="flex animate-scroll-left">
+          <div className="flex animate-scroll-left" style={{ paddingTop: '8px', paddingBottom: '8px' }}>
             {/* Duplicate recipes for seamless loop */}
             {[...recipes, ...recipes].reverse().map((recipe, index) => (
               <RecipeCard key={`reverse-${recipe.id}-${index}`} recipe={recipe} />
