@@ -52,7 +52,6 @@ export default function FoodFreedomSection() {
         <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-green-accent/20 rounded-full animate-float" />
         <div className="absolute bottom-1/3 right-1/5 w-3 h-3 bg-orange-primary/15 rounded-full animate-float" style={{ animationDelay: '2s' }} />
       </div>
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content section */}
@@ -110,7 +109,7 @@ export default function FoodFreedomSection() {
               <img 
                 src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe89d5_Stickers-mobile.svg"
                 alt="collection of dietary stickers" 
-                className="w-full max-w-md mx-auto"
+                className="w-full max-w-md mx-auto ml-[80px] mr-[80px]"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=200";
                 }}
