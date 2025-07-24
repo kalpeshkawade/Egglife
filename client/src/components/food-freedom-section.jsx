@@ -36,12 +36,13 @@ export default function FoodFreedomSection() {
   return (
     <section 
       id="food-freedom-section"
-      className="relative bg-white py-20 overflow-hidden"
+      className="relative py-20 overflow-hidden"
+      style={{ backgroundColor: '#521FCC' }}
     >
       {/* Background animated elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div 
-          className="absolute w-full h-full bg-gradient-to-bl from-green-50/30 to-transparent"
+          className="absolute w-full h-full bg-gradient-to-bl from-white/10 to-transparent"
           style={{ 
             transform: `translateY(${parallaxOffset}px)`,
             transition: 'transform 0.1s ease-out'
@@ -49,8 +50,8 @@ export default function FoodFreedomSection() {
         />
         
         {/* Floating animation elements */}
-        <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-green-accent/20 rounded-full animate-float" />
-        <div className="absolute bottom-1/3 right-1/5 w-3 h-3 bg-orange-primary/15 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 left-1/6 w-2 h-2 bg-white/20 rounded-full animate-float" />
+        <div className="absolute bottom-1/3 right-1/5 w-3 h-3 bg-orange-primary/25 rounded-full animate-float" style={{ animationDelay: '2s' }} />
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -60,11 +61,11 @@ export default function FoodFreedomSection() {
               isVisible ? 'animate-fade-in' : 'opacity-0 translate-x-10'
             }`}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-dark leading-tight tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight tracking-tight">
               We stand for<br />food‍ freedom
             </h2>
             
-            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-medium leading-relaxed font-normal">
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white/90 leading-relaxed font-normal">
               Taste and nutrition are not mutually exclusive. Enjoy the foods you love and flavors you crave, regardless of dietary lifestyle.
             </p>
             
