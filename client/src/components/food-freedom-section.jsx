@@ -61,11 +61,11 @@ export default function FoodFreedomSection() {
               isVisible ? 'animate-fade-in' : 'opacity-0 translate-x-10'
             }`}
           >
-            <h2 className="text-5xl lg:text-6xl font-bold text-gray-dark leading-tight tracking-tight">
+            <h2 className="text-6xl lg:text-8xl xl:text-9xl font-bold text-gray-dark leading-tight tracking-tight">
               We stand for food‍ freedom
             </h2>
             
-            <p className="text-xl lg:text-2xl text-gray-medium leading-relaxed">
+            <p className="text-2xl lg:text-3xl xl:text-4xl text-gray-medium leading-relaxed font-light">
               Taste and nutrition are not mutually exclusive. Enjoy the foods you love and flavors you crave, regardless of dietary lifestyle.
             </p>
             
@@ -77,15 +77,16 @@ export default function FoodFreedomSection() {
               style={{ animationDelay: '0.2s' }}
             >
               <Link href="/learn/why-we-do-it">
-                <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg overflow-hidden">
+                <button className="group relative bg-orange-primary text-white px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden">
                   <span className="relative z-10 flex">
                     {['W', 'h', 'y', ' ', 'w', 'e', ' ', 'd', 'o', ' ', 'i', 't'].map((letter, index) => (
                       <span
                         key={index}
-                        className="inline-block transition-all duration-300 group-hover:animate-wave-text"
+                        className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
                         style={{ 
-                          animationDelay: `${index * 0.08}s`,
-                          animationDuration: '1s'
+                          animationDelay: `${index * 0.1}s`,
+                          animationDuration: '1.5s',
+                          animationIterationCount: 'infinite'
                         }}
                       >
                         {letter === ' ' ? '\u00A0' : letter}
@@ -94,7 +95,7 @@ export default function FoodFreedomSection() {
                   </span>
                   
                   {/* Button shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
                 </button>
               </Link>
             </div>
