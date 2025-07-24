@@ -150,46 +150,87 @@ export default function InfinitePossibilitiesSection() {
           </div>
         </div>
 
-        {/* Recipe cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {recipes.map((recipe, index) => (
-            <div
-              key={recipe.id}
-              className={`transition-all duration-700 ${
-                isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ animationDelay: `${0.1 * (index + 1)}s` }}
-            >
-              <Link href={`/recipes/${recipe.slug}`}>
-                <div className="group cursor-pointer">
-                  {/* Recipe card with border matching original */}
-                  <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                    {/* Image container */}
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={recipe.image}
-                        alt={recipe.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                        onError={(e) => {
-                          e.target.src = "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300";
-                        }}
-                      />
+        {/* Continuous moving carousel */}
+        <div className="relative overflow-hidden">
+          {/* First row - moves left to right */}
+          <div className="flex animate-scroll-right mb-6">
+            {/* Duplicate recipes for seamless loop */}
+            {[...recipes, ...recipes].map((recipe, index) => (
+              <div
+                key={`${recipe.id}-${index}`}
+                className="flex-none w-80 mx-3"
+              >
+                <Link href={`/recipes/${recipe.slug}`}>
+                  <div className="group cursor-pointer">
+                    {/* Recipe card with border matching original */}
+                    <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                      {/* Image container */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={recipe.image}
+                          alt={recipe.title}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                          onError={(e) => {
+                            e.target.src = "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300";
+                          }}
+                        />
+                        
+                        {/* Overlay gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
                       
-                      {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="p-4">
-                      <h3 className="font-bold text-gray-dark text-lg capitalize group-hover:text-orange-primary transition-colors duration-300">
-                        {recipe.title}
-                      </h3>
+                      {/* Content */}
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-dark text-lg capitalize group-hover:text-orange-primary transition-colors duration-300">
+                          {recipe.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          ))}
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row - moves right to left (reverse) */}
+          <div className="flex animate-scroll-left">
+            {/* Duplicate recipes for seamless loop */}
+            {[...recipes, ...recipes].reverse().map((recipe, index) => (
+              <div
+                key={`reverse-${recipe.id}-${index}`}
+                className="flex-none w-80 mx-3"
+              >
+                <Link href={`/recipes/${recipe.slug}`}>
+                  <div className="group cursor-pointer">
+                    {/* Recipe card with border matching original */}
+                    <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                      {/* Image container */}
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={recipe.image}
+                          alt={recipe.title}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                          onError={(e) => {
+                            e.target.src = "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300";
+                          }}
+                        />
+                        
+                        {/* Overlay gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-4">
+                        <h3 className="font-bold text-gray-dark text-lg capitalize group-hover:text-orange-primary transition-colors duration-300">
+                          {recipe.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
