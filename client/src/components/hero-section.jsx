@@ -64,9 +64,9 @@ export default function HeroSection() {
         className="relative transition-all duration-1000 ease-in-out"
         style={{ backgroundColor: currentColors.background }}
       >
-        <div className="py-12 lg:py-16">
+        <div className="py-8 lg:py-10">
           <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-12">
+            <div className="text-center mb-6">
               <div className="space-y-4 mb-8">
                 <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-gray-dark">
                   The Perfect Wrap<sup className="text-lg">®</sup>
