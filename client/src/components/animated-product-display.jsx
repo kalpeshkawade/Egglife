@@ -56,7 +56,8 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       style={{
         backgroundColor: currentColors.background,
         marginLeft: 'calc(-50vw + 50%)',
-        minHeight: '40vh'
+        minHeight: '40vh',
+        marginTop: '-100px' // Overlap into hero section to show full product image
       }}
     >
       <div className="flex justify-center items-end relative overflow-hidden min-h-[40vh]">
@@ -64,7 +65,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       {/* Single Product Display */}
       <div className="relative w-full mx-auto z-10">
         {/* Very small white semicircle background from bottom matching original website */}
-        <div className="relative h-[300px] flex items-end justify-center">
+        <div className="relative h-[400px] flex items-end justify-center">
           <div 
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-[30vh] bg-white shadow-xl transition-all duration-1000 ease-in-out"
             style={{
@@ -89,7 +90,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
                   alt={`${currentProduct.name} Egg White Wraps`} 
                   className="w-96 h-[26rem] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
                   style={{ 
-                    transform: 'translateY(40px)' // Position so significant portion overflows outside small semicircle
+                    transform: 'translateY(-80px)' // Position to overlap into upper div and show full image
                   }}
                 />
               </div>
