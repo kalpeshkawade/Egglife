@@ -28,6 +28,7 @@ This is a full-stack web application for EggLife, a brand that specializes in eg
 - **Product Filtering**: Removed products without matching brand colors from displays, ensuring only products with proper color assignments appear in animations and product listings
 - **Contact Us Page**: Created comprehensive contact us page matching original EggLife website exactly with contact form, file upload functionality, purple brand colors (#521FCC), rounded-full input fields, subject dropdown options, and authentic EggLife styling with decorative protein stickers
 - **Navigation Updates**: Added "Contact Us" link to both desktop and mobile navigation menus with proper hover states matching brand colors, and updated footer "Contact Us" link to route to the new contact page
+- **About Us Page**: Created comprehensive About Us page inspired by EggLife careers page content, featuring company story, mission & values, EggLife difference with authentic images, team culture, and career opportunities with authentic EggLife branding and purple/orange color scheme
 
 ## User Preferences
 
