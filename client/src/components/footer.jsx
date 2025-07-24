@@ -126,6 +126,16 @@ export default function Footer() {
                 alt="Good Housekeeping Best Snack" 
                 className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
               />
+              <img 
+                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67d46f1ca88fba5bdcfe8b4f_ic-badge.webp" 
+                alt="Non-GMO Project Verified" 
+                className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+              />
+              <img 
+                src="https://cdn.prod.website-files.com/67d46f1ca88fba5bdcfe889a/67ecdc13019c3ee642488ae3_v1-1a_InsurgentBrandBadges.webp" 
+                alt="Keto Certified" 
+                className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+              />
             </div>
           </div>
           
