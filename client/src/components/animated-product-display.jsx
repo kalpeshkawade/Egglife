@@ -56,20 +56,20 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       style={{
         backgroundColor: currentColors.background,
         marginLeft: 'calc(-50vw + 50%)',
-        minHeight: '70vh'
+        minHeight: '60vh'
       }}
     >
-      <div className="flex justify-center items-end relative overflow-hidden min-h-[70vh]">
+      <div className="flex justify-center items-end relative overflow-hidden min-h-[60vh]">
       
       {/* Single Product Display */}
       <div className="relative w-full mx-auto z-10">
-        {/* White semicircle background from bottom - smaller size matching original website */}
-        <div className="relative h-[500px] flex items-end justify-center">
+        {/* Small white semicircle background from bottom matching original website */}
+        <div className="relative h-[400px] flex items-end justify-center">
           <div 
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[120vw] h-[60vh] bg-white shadow-2xl transition-all duration-1000 ease-in-out"
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[100vw] h-[40vh] bg-white shadow-xl transition-all duration-1000 ease-in-out"
             style={{
               clipPath: 'ellipse(50% 100% at 50% 100%)',
-              boxShadow: `0 -30px 80px ${currentColors.primary}15, 0 0 150px ${currentColors.background}20`
+              boxShadow: `0 -20px 60px ${currentColors.primary}10, 0 0 100px ${currentColors.background}15`
             }}
           />
           
@@ -81,29 +81,29 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
                 : "opacity-100 transform scale-100 translate-y-0 animate-product-reveal"
             }`}
           >
-            {/* Product image positioned above semicircle as in original website */}
+            {/* Product image positioned so half is outside semicircle, half inside */}
             <div className="relative animate-float">
-              <div className="flex items-end justify-center relative pb-16">
+              <div className="flex items-end justify-center relative">
                 <img 
                   src={currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
-                  className="w-80 h-96 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
+                  className="w-72 h-80 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
                   style={{ 
-                    transform: 'translateY(-40px)' // Makes image sit above smaller semicircle
+                    transform: 'translateY(20px)' // Position so half is in semicircle, half outside
                   }}
                 />
               </div>
             </div>
 
-            {/* Product name positioned on the semicircle */}
-            <div className="text-center absolute bottom-24 left-1/2 transform -translate-x-1/2 z-30">
+            {/* Product name and description positioned below image on semicircle */}
+            <div className="text-center absolute bottom-16 left-1/2 transform -translate-x-1/2 z-30">
               <h3 
-                className="text-3xl font-bold mb-3 animate-text-fade-in transition-colors duration-700"
+                className="text-2xl font-bold mb-2 animate-text-fade-in transition-colors duration-700"
                 style={{ color: currentColors.primary }}
               >
                 {currentProduct.name}
               </h3>
-              <p className="text-gray-medium text-base leading-relaxed animate-text-fade-in delay-100 max-w-md mx-auto">
+              <p className="text-gray-medium text-sm leading-relaxed animate-text-fade-in delay-100 max-w-xs mx-auto">
                 {currentProduct.description}
               </p>
             </div>
@@ -111,7 +111,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
         </div>
 
         {/* Product indicator dots positioned on the white semicircle */}
-        <div className="flex justify-center absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 space-x-3">
+        <div className="flex justify-center absolute bottom-4 left-1/2 transform -translate-x-1/2 z-30 space-x-2">
           {wrapProducts.map((_, index) => (
             <button
               key={index}
