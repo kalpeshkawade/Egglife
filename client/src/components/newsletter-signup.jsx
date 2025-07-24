@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import RollingLogo from "./rolling-logo";
 
 export default function NewsletterSignup() {
   const [scale, setScale] = useState(1);
@@ -94,7 +95,8 @@ export default function NewsletterSignup() {
   return (
     <section 
       ref={sectionRef}
-      className="bg-white py-20 overflow-hidden"
+      className="py-20 overflow-hidden"
+      style={{ backgroundColor: '#521FCC' }}
     >
       <div className="container mx-auto px-4">
         <div 
@@ -103,63 +105,51 @@ export default function NewsletterSignup() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Side - Information */}
+            {/* Left Side - Rolling Logo and Information */}
             <div className="text-center lg:text-left">
-              {/* Badge */}
-              <div className="relative inline-block mb-8">
-                <div className="bg-gradient-to-r from-orange-100 to-yellow-100 rounded-full p-6">
-                  <div className="bg-orange-primary rounded-full p-4">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="text-white">
-                      <path d="M16 2L19.09 8.26L26 9L21 14.74L22.18 21.02L16 17.77L9.82 21.02L11 14.74L6 9L12.91 8.26L16 2Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute -top-2 -right-2 bg-orange-primary text-white text-xs font-bold px-2 py-1 rounded-full">
-                  Premium
-                </div>
-              </div>
+              {/* Rolling Logo */}
+              <RollingLogo />
 
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-dark mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                 Join our culinary community
               </h2>
-              
-              <div className="mb-6">
-                <div className="text-orange-primary font-bold text-lg mb-2">
-                  supreme protein - supreme protein
-                </div>
-              </div>
 
-              <p className="text-lg text-gray-medium leading-relaxed">
-                Stay up to date, discover delicious recipes, and get <span className="font-bold text-orange-primary">$2.00 back</span> on your first in-store purchase of egglife egg white wraps
+              <p className="text-lg text-white/90 leading-relaxed">
+                Stay up to date, discover delicious recipes, and get <span className="font-bold text-orange-300">$2.00 back</span> on your first in-store purchase of egglife egg white wraps
               </p>
             </div>
 
             {/* Right Side - Form */}
-            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-xl border border-gray-100">
+            <div 
+              className="p-8 rounded-2xl shadow-xl border border-purple-400/30"
+              style={{ backgroundColor: '#521FCC' }}
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-dark mb-2">
+                    <label className="block text-sm font-semibold text-white mb-2">
                       First name*
                     </label>
                     <input 
                       type="text" 
                       value={formData.firstName}
                       onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      placeholder="Enter your first name"
                       required 
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-dark mb-2">
+                    <label className="block text-sm font-semibold text-white mb-2">
                       Last name*
                     </label>
                     <input 
                       type="text" 
                       value={formData.lastName}
                       onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      placeholder="Enter your last name"
                       required 
                     />
                   </div>
@@ -167,14 +157,15 @@ export default function NewsletterSignup() {
 
                 {/* Email */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-dark mb-2">
+                  <label className="block text-sm font-semibold text-white mb-2">
                     Email address*
                   </label>
                   <input 
                     type="email" 
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                    className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                    placeholder="Enter your email address"
                     required 
                   />
                 </div>
@@ -182,32 +173,33 @@ export default function NewsletterSignup() {
                 {/* Country and Zip */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-dark mb-2">
+                    <label className="block text-sm font-semibold text-white mb-2">
                       Country*
                     </label>
                     <select 
                       value={formData.country}
                       onChange={(e) => handleInputChange('country', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
                       required
                     >
-                      <option value="">Select country</option>
-                      <option value="US">United States</option>
-                      <option value="CA">Canada</option>
-                      <option value="UK">United Kingdom</option>
-                      <option value="AU">Australia</option>
-                      <option value="Other">Other</option>
+                      <option value="" className="text-gray-800">Select country</option>
+                      <option value="US" className="text-gray-800">United States</option>
+                      <option value="CA" className="text-gray-800">Canada</option>
+                      <option value="UK" className="text-gray-800">United Kingdom</option>
+                      <option value="AU" className="text-gray-800">Australia</option>
+                      <option value="Other" className="text-gray-800">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-dark mb-2">
+                    <label className="block text-sm font-semibold text-white mb-2">
                       Zip code*
                     </label>
                     <input 
                       type="text" 
                       value={formData.zipCode}
                       onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      placeholder="Enter your zip code"
                       required 
                     />
                   </div>
@@ -215,22 +207,22 @@ export default function NewsletterSignup() {
 
                 {/* Recipe Type */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-dark mb-2">
+                  <label className="block text-sm font-semibold text-white mb-2">
                     What type of recipes are you looking for?*
                   </label>
                   <select 
                     value={formData.recipeType}
                     onChange={(e) => handleInputChange('recipeType', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                    className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
                     required
                   >
-                    <option value="">Select recipe type</option>
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snacks">Snacks</option>
-                    <option value="desserts">Desserts</option>
-                    <option value="all">All recipes</option>
+                    <option value="" className="text-gray-800">Select recipe type</option>
+                    <option value="breakfast" className="text-gray-800">Breakfast</option>
+                    <option value="lunch" className="text-gray-800">Lunch</option>
+                    <option value="dinner" className="text-gray-800">Dinner</option>
+                    <option value="snacks" className="text-gray-800">Snacks</option>
+                    <option value="desserts" className="text-gray-800">Desserts</option>
+                    <option value="all" className="text-gray-800">All recipes</option>
                   </select>
                 </div>
 
