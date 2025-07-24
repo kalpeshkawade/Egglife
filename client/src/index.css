@@ -13,7 +13,7 @@
   --card-foreground: hsl(20, 14.3%, 4.1%);
   --border: hsl(20, 5.9%, 90%);
   --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(17, 100%, 59%);
+  --primary: #E70294;
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(60, 4.8%, 95.9%);
   --secondary-foreground: hsl(24, 9.8%, 10%);
@@ -25,7 +25,7 @@
   --radius: 0.5rem;
   
   /* EggLife brand colors */
-  --orange-primary: hsl(17, 100%, 59%);
+  --orange-primary: #E70294;
   --gray-dark: hsl(217, 19%, 27%);
   --gray-medium: hsl(211, 13%, 45%);
   --green-accent: hsl(142, 71%, 45%);
@@ -42,7 +42,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(17, 100%, 59%);
+  --primary: #E70294;
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);

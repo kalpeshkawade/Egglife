@@ -132,7 +132,7 @@ export default function NewsletterSignup() {
 
             {/* Right Side - Form */}
             <div 
-              className="p-8 rounded-2xl shadow-xl border border-purple-400/30"
+              className="p-8 rounded-3xl shadow-xl border-2 border-white/20"
               style={{ backgroundColor: '#521FCC' }}
             >
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -146,7 +146,7 @@ export default function NewsletterSignup() {
                       type="text" 
                       value={formData.firstName}
                       onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E70294] focus:border-[#E70294] transition-colors" 
                       placeholder="Enter your first name"
                       required 
                     />
@@ -159,7 +159,7 @@ export default function NewsletterSignup() {
                       type="text" 
                       value={formData.lastName}
                       onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E70294] focus:border-[#E70294] transition-colors" 
                       placeholder="Enter your last name"
                       required 
                     />
@@ -175,7 +175,7 @@ export default function NewsletterSignup() {
                     type="email" 
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                    className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E70294] focus:border-[#E70294] transition-colors" 
                     placeholder="Enter your email address"
                     required 
                   />
@@ -190,7 +190,7 @@ export default function NewsletterSignup() {
                     <select 
                       value={formData.country}
                       onChange={(e) => handleInputChange('country', e.target.value)}
-                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E70294] focus:border-[#E70294] transition-colors" 
                       required
                     >
                       <option value="" className="text-gray-800">Select country</option>
@@ -209,7 +209,7 @@ export default function NewsletterSignup() {
                       type="text" 
                       value={formData.zipCode}
                       onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                      className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white placeholder-white/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E70294] focus:border-[#E70294] transition-colors" 
                       placeholder="Enter your zip code"
                       required 
                     />
@@ -224,7 +224,7 @@ export default function NewsletterSignup() {
                   <select 
                     value={formData.recipeType}
                     onChange={(e) => handleInputChange('recipeType', e.target.value)}
-                    className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-primary focus:border-orange-primary transition-colors" 
+                    className="w-full px-4 py-3 border border-purple-300/30 bg-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E70294] focus:border-[#E70294] transition-colors" 
                     required
                   >
                     <option value="" className="text-gray-800">Select recipe type</option>
