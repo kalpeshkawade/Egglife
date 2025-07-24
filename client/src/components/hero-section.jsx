@@ -29,7 +29,7 @@ export default function HeroSection() {
   }, [benefitTexts.length]);
 
   return (
-    <section className="bg-gradient-to-r from-orange-50 to-yellow-50 py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-16 lg:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h1 className="text-4xl lg:text-6xl font-bold text-gray-dark mb-6">

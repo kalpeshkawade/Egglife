@@ -62,12 +62,13 @@ export default function AnimatedProductDisplay() {
   const currentColors = productColors[currentProduct?.slug] || productColors.original;
 
   return (
-    <div className="flex justify-center items-center relative overflow-hidden">
-      {/* Dynamic background color that changes with product */}
+    <div className="flex justify-center items-center relative overflow-hidden min-h-screen">
+      {/* Dynamic background color that extends throughout entire section */}
       <div 
-        className="absolute inset-0 transition-all duration-1000 ease-in-out"
+        className="absolute inset-0 -top-16 -bottom-16 transition-all duration-1000 ease-in-out"
         style={{
-          background: `linear-gradient(135deg, ${currentColors.background} 0%, transparent 70%)`
+          backgroundColor: currentColors.background,
+          background: `linear-gradient(135deg, ${currentColors.background} 0%, ${currentColors.secondary} 100%)`
         }}
       />
       
@@ -91,14 +92,17 @@ export default function AnimatedProductDisplay() {
                 : "opacity-100 transform scale-100 translate-y-0 animate-product-reveal"
             }`}
           >
-            {/* Product image centered in semicircle, extending slightly above */}
+            {/* Product image overlapping semicircle as in original website */}
             <div className="relative animate-float">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center relative">
                 <img 
                   src={currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
-                  className="w-80 h-96 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
-                  style={{ marginBottom: '2rem' }}
+                  className="w-80 h-96 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
+                  style={{ 
+                    marginBottom: '1rem',
+                    transform: 'translateY(-20px)' // Makes image overlap semicircle
+                  }}
                 />
               </div>
             </div>
