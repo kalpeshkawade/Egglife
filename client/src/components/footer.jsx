@@ -17,8 +17,25 @@ export default function Footer() {
               Get access to new recipes, exciting updates, and get $2.00 back on your first in-store purchase of egglife egg white wraps
             </p>
             <Link href="/newsletter">
-              <button className="bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 transform hover:scale-105 mb-8">
-                Join the community
+              <button className="group relative bg-orange-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden mb-8">
+                <span className="relative z-10 flex">
+                  {['J', 'o', 'i', 'n', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'].map((letter, index) => (
+                    <span
+                      key={index}
+                      className="inline-block transition-all duration-500 ease-in-out group-hover:animate-wavy-text"
+                      style={{ 
+                        animationDelay: `${index * 0.05}s`,
+                        animationDuration: '1.2s',
+                        animationIterationCount: 'infinite'
+                      }}
+                    >
+                      {letter === ' ' ? '\u00A0' : letter}
+                    </span>
+                  ))}
+                </span>
+                
+                {/* Button shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-700" />
               </button>
             </Link>
             
