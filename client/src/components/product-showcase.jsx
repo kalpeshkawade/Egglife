@@ -117,29 +117,31 @@ function ProductCard({ product }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Image Container with Oval Hover Effect */}
+        {/* Image Container with Hover Effect */}
         <div className="relative h-80 overflow-hidden">
-          {/* Main Product Image */}
+          {/* Main Product Image - Hidden during hover */}
           <img 
             src={product.imageUrl} 
             alt={product.name} 
-            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+            className={`w-full h-full object-cover object-center transition-all duration-500 ${
+              isHovered ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
+            }`}
           />
 
-          {/* Oval Egg-shaped Hover Image */}
+          {/* Food Dish Hover Image - Only shows food dishes */}
           <div
-            className={`absolute inset-0 ${
-              isHovered ? 'animate-oval-expand opacity-100' : 'animate-oval-contract opacity-0'
+            className={`absolute inset-0 transition-opacity duration-500 ${
+              isHovered ? 'opacity-100' : 'opacity-0'
             }`}
             style={{
               background: `url(${product.hoverImageUrl}) center/cover no-repeat`,
-              clipPath: 'ellipse(0% 0% at 50% 50%)'
+              backgroundSize: 'cover'
             }}
           />
           
-          {/* Overlay for better text readability */}
+          {/* Overlay for better text readability during hover */}
           <div 
-            className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-500 ${
+            className={`absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent transition-opacity duration-500 ${
               isHovered ? 'opacity-70' : 'opacity-0'
             }`}
           />
