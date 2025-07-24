@@ -92,10 +92,11 @@ export const dietaryBadges = [
 ];
 
 // Product brand colors matching the original website with authentic hex codes
+// Colors from original EggLife website: #FFCC12, #9FCB30, #00A3D8, #AF2650, #F87402, #7CC22D
 export const productColors = {
   original: {
     primary: '#AF2650',
-    secondary: '#AF2650',
+    secondary: '#AF2650', 
     background: '#AF2650'
   },
   southwest: {
@@ -119,9 +120,9 @@ export const productColors = {
     background: '#FFCC12'
   },
   gardenSalsa: {
-    primary: '#7CC22D',
-    secondary: '#7CC22D',
-    background: '#7CC22D'
+    primary: '#AF2650',
+    secondary: '#AF2650',
+    background: '#AF2650'
   }
 };
 
