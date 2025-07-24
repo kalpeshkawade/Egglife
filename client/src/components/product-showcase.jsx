@@ -66,7 +66,7 @@ export default function ProductShowcase() {
   ];
 
   return (
-    <section className="bg-white py-20">
+    <section className="py-20" style={{ backgroundColor: '#EAE5FA' }}>
       <div className="container mx-auto px-4">
         {/* Header Section - Matching exact EggLife styling */}
         <div className="text-center mb-16">
