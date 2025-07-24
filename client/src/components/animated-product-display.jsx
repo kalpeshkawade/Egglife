@@ -76,7 +76,7 @@ export default function AnimatedProductDisplay() {
         {/* White semicircle background matching original website */}
         <div className="relative h-96 flex items-center justify-center">
           <div 
-            className="absolute bottom-20 left-1/2 transform -translate-x-1/2 w-80 h-40 bg-white shadow-2xl transition-all duration-1000 ease-in-out"
+            className="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-96 h-48 bg-white shadow-2xl transition-all duration-1000 ease-in-out"
             style={{
               clipPath: 'ellipse(50% 100% at 50% 100%)',
               boxShadow: `0 -10px 40px ${currentColors.primary}15, 0 0 80px ${currentColors.background}`
@@ -97,8 +97,8 @@ export default function AnimatedProductDisplay() {
                 <img 
                   src={currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
-                  className="w-56 h-64 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
-                  style={{ marginBottom: '2rem' }}
+                  className="w-64 h-72 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+                  style={{ marginBottom: '1.5rem' }}
                 />
               </div>
             </div>
