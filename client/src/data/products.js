@@ -91,13 +91,13 @@ export const dietaryBadges = [
   'Dairy Free'
 ];
 
-// Product brand colors matching the original website with authentic hex codes
-// Colors from original EggLife website: #FFCC12, #9FCB30, #00A3D8, #AF2650, #F87402, #7CC22D
+// Product brand colors matching the original EggLife website with authentic hex codes
+// Colors provided by user: #A61456, #F87402, #00A3D8, #AF2650, #9FCB30, #FFCC12
 export const productColors = {
   original: {
-    primary: '#AF2650',
-    secondary: '#AF2650', 
-    background: 'rgba(175, 38, 80, 0.15)'
+    primary: '#A61456',
+    secondary: '#A61456', 
+    background: 'rgba(166, 20, 86, 0.15)'
   },
   southwest: {
     primary: '#F87402',
@@ -120,9 +120,9 @@ export const productColors = {
     background: 'rgba(255, 204, 18, 0.15)'
   },
   "garden-salsa": {
-    primary: '#7CC22D',
-    secondary: '#7CC22D',
-    background: 'rgba(124, 194, 45, 0.15)'
+    primary: '#AF2650',
+    secondary: '#AF2650',
+    background: 'rgba(175, 38, 80, 0.15)'
   }
 };
 
