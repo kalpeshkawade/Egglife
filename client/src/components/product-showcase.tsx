@@ -2,20 +2,21 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import { productColors } from "../data/products.js";
+import { getProductImages } from "../assets/images/products/index";
 
 export default function ProductShowcase() {
   const { data: allProducts = [], isLoading } = useQuery({
     queryKey: ["/api/products"],
   });
 
-  // Map product slugs to color keys
+  // Map product slugs to color keys (matching database slugs)
   const slugToColorMap = {
-    'original-wrap': 'original',
-    'southwest-wrap': 'southwest', 
-    'everything-bagel-wrap': 'everything-bagel',
-    'roasted-garlic-herb-wrap': 'roasted-garlic-herb',
-    'sweet-cinnamon-wrap': 'sweet-cinnamon',
-    'garden-salsa-wrap': 'garden-salsa'
+    'original': 'original',
+    'southwest': 'southwest', 
+    'everything-bagel': 'everything-bagel',
+    'roasted-garlic-herb': 'roasted-garlic-herb',
+    'sweet-cinnamon': 'sweet-cinnamon',
+    'garden-salsa': 'garden-salsa'
   };
 
   // Transform database products to showcase format with colors
@@ -24,6 +25,7 @@ export default function ProductShowcase() {
     .map(product => {
       const colorKey = slugToColorMap[product.slug];
       const colors = productColors[colorKey] || productColors.original;
+      const images = getProductImages(product.slug);
       return {
         id: product.id,
         name: product.flavor,
@@ -31,8 +33,8 @@ export default function ProductShowcase() {
         description: product.description,
         color: colors.primary,
         textColor: `text-[${colors.primary}]`,
-        imageUrl: product.imageUrl,
-        hoverImageUrl: product.hoverImageUrl
+        imageUrl: images.front,
+        hoverImageUrl: images.hover
       };
     });
 
@@ -42,6 +44,7 @@ export default function ProductShowcase() {
     .map(product => {
       const colorKey = slugToColorMap[product.slug] || 'original';
       const colors = productColors[colorKey] || productColors.original;
+      const images = getProductImages(product.slug);
       return {
         id: product.id,
         name: `GRAB & GO ${product.flavor}`,
@@ -49,8 +52,8 @@ export default function ProductShowcase() {
         description: product.description,
         color: colors.primary,
         textColor: `text-[${colors.primary}]`,
-        imageUrl: product.imageUrl,
-        hoverImageUrl: product.hoverImageUrl
+        imageUrl: images.front,
+        hoverImageUrl: images.hover
       };
     });
 

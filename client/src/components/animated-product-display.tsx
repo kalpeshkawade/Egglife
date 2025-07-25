@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { productColors } from "../data/products.js";
+import { getProductImages } from "../assets/images/products/index";
 
 export default function AnimatedProductDisplay({ currentProductIndex }) {
   const [currentIndex, setCurrentIndex] = useState(currentProductIndex || 0);
@@ -11,14 +12,14 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
   });
 
   // Filter only wrap products that have matching brand colors
-  // Map product slugs to color keys
+  // Map product slugs to color keys (matching database slugs)
   const slugToColorMap = {
-    'original-wrap': 'original',
-    'southwest-wrap': 'southwest', 
-    'everything-bagel-wrap': 'everything-bagel',
-    'roasted-garlic-herb-wrap': 'roasted-garlic-herb',
-    'sweet-cinnamon-wrap': 'sweet-cinnamon',
-    'garden-salsa-wrap': 'garden-salsa'
+    'original': 'original',
+    'southwest': 'southwest', 
+    'everything-bagel': 'everything-bagel',
+    'roasted-garlic-herb': 'roasted-garlic-herb',
+    'sweet-cinnamon': 'sweet-cinnamon',
+    'garden-salsa': 'garden-salsa'
   };
   
   const wrapProducts = products.filter(product => 
@@ -60,6 +61,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
   const currentProduct = wrapProducts[currentIndex];
   const colorKey = slugToColorMap[currentProduct?.slug] || 'original';
   const currentColors = productColors[colorKey] || productColors.original;
+  const images = currentProduct ? getProductImages(currentProduct.slug) : null;
 
   return (
     <div 
@@ -89,7 +91,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
             <div className="relative animate-float">
               <div className="flex items-end justify-center relative">
                 <img 
-                  src={currentProduct.imageUrl} 
+                  src={images?.front || currentProduct.imageUrl} 
                   alt={`${currentProduct.name} Egg White Wraps`} 
                   className="w-96 h-[26rem] object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105 relative z-20"
                   style={{ 
