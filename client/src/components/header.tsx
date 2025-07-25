@@ -93,6 +93,7 @@ export default function Header() {
                   image: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=64&h=64"
                 }
               ]}
+              allLink="/learn"
             />
 
             <Link 
@@ -100,6 +101,13 @@ export default function Header() {
               className="text-gray-dark font-medium hover:text-orange-primary"
             >
               Where to Buy
+            </Link>
+            
+            <Link 
+              href="/about-us" 
+              className="text-gray-dark font-medium hover:text-orange-primary"
+            >
+              About Us
             </Link>
             
             <Link 
@@ -112,9 +120,12 @@ export default function Header() {
 
           {/* User Actions */}
           <div className="hidden lg:flex items-center space-x-3">
-            <button className="text-gray-dark hover:text-orange-primary p-2">
-              <User size={18} />
-            </button>
+            <Link href="/login">
+              <button className="bg-[#521FCC] hover:bg-[#4118a8] text-white px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center space-x-2">
+                <User size={16} />
+                <span>Login</span>
+              </button>
+            </Link>
             <button className="text-gray-dark hover:text-orange-primary p-2">
               <ShoppingCart size={18} />
             </button>
@@ -162,11 +173,25 @@ export default function Header() {
                 Where to Buy
               </Link>
               <Link 
+                href="/about-us" 
+                className="block py-3 text-gray-dark"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
                 href="/contact-us" 
                 className="block py-3 text-gray-dark"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact Us
+              </Link>
+              <Link 
+                href="/login" 
+                className="block py-3 bg-[#521FCC] text-white rounded-full text-center mx-2 mt-2 mb-4"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Login
               </Link>
             </div>
           </div>

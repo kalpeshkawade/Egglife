@@ -17,6 +17,8 @@ import LearnFAQ from "@/pages/learn-faq";
 import LearnWhyWeDoIt from "@/pages/learn-why-we-do-it";
 import ContactUs from "@/pages/contact-us";
 import AboutUs from "@/pages/about-us";
+import Login from "@/pages/login";
+import Signup from "@/pages/signup";
 
 function Router() {
   return (
@@ -33,7 +35,9 @@ function Router() {
       <Route path="/learn/faq" component={LearnFAQ} />
       <Route path="/learn/why-we-do-it" component={LearnWhyWeDoIt} />
       <Route path="/contact-us" component={ContactUs} />
-      <Route path="/about" component={AboutUs} />
+      <Route path="/about-us" component={AboutUs} />
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
       <Route component={NotFound} />
     </Switch>
   );
