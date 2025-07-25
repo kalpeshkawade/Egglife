@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function AboutUs() {
   return (
     <div className="min-h-screen">
+      <Header />
       {/* Hero Section */}
       <div className="relative py-32 bg-gradient-to-br from-purple-50 to-orange-50 overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -268,6 +271,8 @@ export default function AboutUs() {
           </a>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useMutation } from '@tanstack/react-query';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function ContactUs() {
   const { toast } = useToast();
@@ -95,6 +97,8 @@ export default function ContactUs() {
 
   return (
     <div className="min-h-screen">
+      <Header />
+      
       {/* Header Section */}
       <div className="py-20 bg-gradient-to-br from-purple-50 to-orange-50">
         <div className="container mx-auto px-4 text-center">
@@ -285,6 +289,8 @@ export default function ContactUs() {
           />
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }
