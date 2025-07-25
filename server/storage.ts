@@ -473,26 +473,31 @@ export class MemStorage implements IStorage {
 export class DatabaseStorage implements IStorage {
   // Products
   async getProducts(): Promise<Product[]> {
+    if (!db) throw new Error("Database not available");
     return await db.select().from(products).where(eq(products.isAvailable, true));
   }
 
   async getProductById(id: number): Promise<Product | undefined> {
+    if (!db) throw new Error("Database not available");
     const [product] = await db.select().from(products).where(eq(products.id, id));
     return product;
   }
 
   async getProductBySlug(slug: string): Promise<Product | undefined> {
+    if (!db) throw new Error("Database not available");
     const [product] = await db.select().from(products).where(eq(products.slug, slug));
     return product;
   }
 
   async createProduct(product: InsertProduct): Promise<Product> {
+    if (!db) throw new Error("Database not available");
     const [newProduct] = await db.insert(products).values(product).returning();
     return newProduct;
   }
 
   // Recipes
   async getRecipes(mealType?: string): Promise<Recipe[]> {
+    if (!db) throw new Error("Database not available");
     if (mealType) {
       return await db.select().from(recipes).where(eq(recipes.mealType, mealType));
     }
@@ -500,22 +505,26 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getRecipeById(id: number): Promise<Recipe | undefined> {
+    if (!db) throw new Error("Database not available");
     const [recipe] = await db.select().from(recipes).where(eq(recipes.id, id));
     return recipe;
   }
 
   async getRecipeBySlug(slug: string): Promise<Recipe | undefined> {
+    if (!db) throw new Error("Database not available");
     const [recipe] = await db.select().from(recipes).where(eq(recipes.slug, slug));
     return recipe;
   }
 
   async createRecipe(recipe: InsertRecipe): Promise<Recipe> {
+    if (!db) throw new Error("Database not available");
     const [newRecipe] = await db.insert(recipes).values(recipe).returning();
     return newRecipe;
   }
 
   // Newsletter
   async subscribeToNewsletter(newsletter: InsertNewsletter): Promise<Newsletter> {
+    if (!db) throw new Error("Database not available");
     const [newSubscription] = await db.insert(newsletters).values({
       ...newsletter,
       subscribedAt: new Date().toISOString(),
@@ -524,9 +533,10 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getNewsletterSubscriptions(): Promise<Newsletter[]> {
+    if (!db) throw new Error("Database not available");
     return await db.select().from(newsletters);
   }
 }
 
-// Use DatabaseStorage for authentication support
-export const storage = new DatabaseStorage();
+// Use DatabaseStorage if database is available, otherwise use MemStorage
+export const storage = db ? new DatabaseStorage() : new MemStorage();
