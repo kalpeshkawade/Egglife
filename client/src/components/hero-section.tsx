@@ -13,14 +13,14 @@ export default function HeroSection() {
   });
 
   // Filter only wrap products that have matching brand colors
-  // Map product slugs to color keys
+  // Map product slugs to color keys (matching database slugs)
   const slugToColorMap = {
-    'original-wrap': 'original',
-    'southwest-wrap': 'southwest', 
-    'everything-bagel-wrap': 'everything-bagel',
-    'roasted-garlic-herb-wrap': 'roasted-garlic-herb',
-    'sweet-cinnamon-wrap': 'sweet-cinnamon',
-    'garden-salsa-wrap': 'garden-salsa'
+    'original': 'original',
+    'southwest': 'southwest', 
+    'everything-bagel': 'everything-bagel',
+    'roasted-garlic-herb': 'roasted-garlic-herb',
+    'sweet-cinnamon': 'sweet-cinnamon',
+    'garden-salsa': 'garden-salsa'
   };
   
   const wrapProducts = products.filter(product => 
@@ -55,7 +55,7 @@ export default function HeroSection() {
         } while (nextIndex === prevIndex && wrapProducts.length > 1);
         return nextIndex;
       });
-    }, 4000); // Match product display timing
+    }, 3000); // Change every 3 seconds like original EggLife website
 
     return () => clearInterval(interval);
   }, [benefitTexts.length, wrapProducts.length]);

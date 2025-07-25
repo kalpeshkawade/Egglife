@@ -26,7 +26,7 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
     product.category === "wrap" && slugToColorMap[product.slug]
   );
 
-  // Sync with hero section product index
+  // Sync with hero section product index and add automatic cycling
   useEffect(() => {
     if (currentProductIndex !== undefined && currentProductIndex !== currentIndex) {
       setIsAnimating(true);
@@ -36,6 +36,27 @@ export default function AnimatedProductDisplay({ currentProductIndex }) {
       }, 400);
     }
   }, [currentProductIndex, currentIndex]);
+
+  // Also cycle automatically if no currentProductIndex is passed
+  useEffect(() => {
+    if (wrapProducts.length === 0 || currentProductIndex !== undefined) return;
+    
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => {
+          let nextIndex;
+          do {
+            nextIndex = Math.floor(Math.random() * wrapProducts.length);
+          } while (nextIndex === prevIndex && wrapProducts.length > 1);
+          return nextIndex;
+        });
+        setIsAnimating(false);
+      }, 400);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [wrapProducts.length, currentProductIndex]);
 
   if (isLoading) {
     return (

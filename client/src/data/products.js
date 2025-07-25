@@ -97,32 +97,32 @@ export const productColors = {
   original: {
     primary: '#AF2650',
     secondary: '#AF2650', 
-    background: '#AF2650'
+    background: 'rgba(175, 38, 80, 0.15)'
   },
   southwest: {
     primary: '#F87402',
     secondary: '#F87402',
-    background: '#F87402'
+    background: 'rgba(248, 116, 2, 0.15)'
   },
   "everything-bagel": {
     primary: '#00A3D8',
     secondary: '#00A3D8',
-    background: '#00A3D8'
+    background: 'rgba(0, 163, 216, 0.15)'
   },
   "roasted-garlic-herb": {
     primary: '#9FCB30',
     secondary: '#9FCB30',
-    background: '#9FCB30'
+    background: 'rgba(159, 203, 48, 0.15)'
   },
   "sweet-cinnamon": {
     primary: '#FFCC12',
     secondary: '#FFCC12',
-    background: '#FFCC12'
+    background: 'rgba(255, 204, 18, 0.15)'
   },
   "garden-salsa": {
     primary: '#7CC22D',
     secondary: '#7CC22D',
-    background: '#7CC22D'
+    background: 'rgba(124, 194, 45, 0.15)'
   }
 };
 
