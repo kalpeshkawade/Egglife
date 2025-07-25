@@ -25,7 +25,6 @@ export default function Home() {
                 Explore our protein-packed recipes and products
               </p>
             </div>
-            </div>
           </div>
         </div>
       </div>
