@@ -1,4 +1,4 @@
-import { products, recipes, newsletters, users, type Product, type Recipe, type Newsletter, type User, type InsertProduct, type InsertRecipe, type InsertNewsletter, type UpsertUser } from "@shared/schema";
+import { products, recipes, newsletters, type Product, type Recipe, type Newsletter, type InsertProduct, type InsertRecipe, type InsertNewsletter } from "@shared/schema";
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 
@@ -18,10 +18,6 @@ export interface IStorage {
   // Newsletter
   subscribeToNewsletter(newsletter: InsertNewsletter): Promise<Newsletter>;
   getNewsletterSubscriptions(): Promise<Newsletter[]>;
-  
-  // User operations (IMPORTANT) these user operations are mandatory for Replit Auth.
-  getUser(id: string): Promise<User | undefined>;
-  upsertUser(user: UpsertUser): Promise<User>;
 }
 
 export class MemStorage implements IStorage {
@@ -472,41 +468,9 @@ export class MemStorage implements IStorage {
   async getNewsletterSubscriptions(): Promise<Newsletter[]> {
     return Array.from(this.newsletters.values());
   }
-  
-  // User operations (IMPORTANT) these user operations are mandatory for Replit Auth.
-  async getUser(id: string): Promise<User | undefined> {
-    // In memory storage doesn't support auth - would need database
-    return undefined;
-  }
-
-  async upsertUser(userData: UpsertUser): Promise<User> {
-    // In memory storage doesn't support auth - would need database
-    throw new Error("User operations require database storage");
-  }
 }
 
 export class DatabaseStorage implements IStorage {
-  // User operations (IMPORTANT) these user operations are mandatory for Replit Auth.
-  async getUser(id: string): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.id, id));
-    return user;
-  }
-
-  async upsertUser(userData: UpsertUser): Promise<User> {
-    const [user] = await db
-      .insert(users)
-      .values(userData)
-      .onConflictDoUpdate({
-        target: users.id,
-        set: {
-          ...userData,
-          updatedAt: new Date(),
-        },
-      })
-      .returning();
-    return user;
-  }
-
   // Products
   async getProducts(): Promise<Product[]> {
     return await db.select().from(products).where(eq(products.isAvailable, true));
